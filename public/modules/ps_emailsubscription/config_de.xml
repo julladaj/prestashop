@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>ps_emailsubscription</name>
+    <displayName><![CDATA[Newsletter-Anmeldung]]></displayName>
+    <version><![CDATA[2.6.0]]></version>
+    <description><![CDATA[F&uuml;gt einen Formular f&uuml;r Newsletter-Abos hinzu.]]></description>
+    <author><![CDATA[PrestaShop]]></author>
+    <tab><![CDATA[]]></tab>
+	<confirmUninstall><![CDATA[Sind Sie sicher, dass Sie alle Kontakte löschen wollen?]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

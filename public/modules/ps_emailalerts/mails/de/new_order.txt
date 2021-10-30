@@ -1,0 +1,36 @@
+[{shop_name}]({shop_url})
+Glückwunsch!
+{shop_name} hat eine neue Bestellung erhalten von: {firstname} {lastname} ({email})
+
+Bestellung: {order_name} vom {date}
+
+Zahlung: {payment}
+
+Artikel-Nr.	Artikel	Stückpreis	Menge	Gesamtpreis    {items}
+
+Artikel
+{total_products}
+
+Rabatt
+{total_discounts}
+
+Geschenkverpackung
+{total_wrapping}
+
+Versand
+{total_shipping}
+
+Steuern
+{total_tax_paid}
+
+Gesamt
+{total_paid}
+
+{carrier}
+
+{delivery_block_html}
+{invoice_block_html}
+
+{message}
+
+[{shop_name}]({shop_url}) powered by [PrestaShop™](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

@@ -1,0 +1,9 @@
+[{shop_name}]({shop_url})
+Hallo {firstname} {lastname},
+Ihre Bestellung wurde versandt
+
+Ihre Bestellung mit der Referenz {order_name} wurde versendet.
+Vielen Dank für Ihre Bestellung bei {shop_name}!
+Follow your order and download your invoice on our shop, go to the [Verlauf und Details Ihrer Bestellungen]({history_url}) section of your customer account.
+
+[{shop_name}]({shop_url}) powered by [PrestaShop™](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<message>
+	<item>
+		<lang>de</lang>
+		<text>Für besseren Service auf dieser Seite verwendet [shop_name] cookies. Beim Fortfahren erklären Sie sich mit der Verwendung der Cookies einverstanden.</text>
+	</item>
+	<item>
+		<lang>es</lang>
+		<text>Con el fin de darle un mejor servicio [shop_name] utiliza cookies. Al continuar navegar por el sitio, usted acepta el uso de cookies.</text>
+	</item>
+	<item>
+		<lang>fr</lang>
+		<text>Afin de vous donner un meilleur service [shop_name] utilise des cookies. En continuant à naviguer sur le site, vous acceptez notre utilisation des cookies.</text>
+	</item>
+	<item>
+		<lang>nl</lang>
+		<text>Om u een betere service [shop_name] geven maakt gebruik van cookies. Door verder naar de site surfen gaat u akkoord met ons gebruik van cookies.</text>
+	</item>
+	<item>
+		<lang>pt</lang>
+		<text>A fim de dar-lhe um melhor serviço [shop_name] usa cookies. Ao continuar a navegar no site, você concorda com a nossa utilização de cookies.</text>
+	</item>
+	<item>
+		<lang>ru</lang>
+		<text>Для того, чтобы дать вам лучшее обслуживание [shop_name] использует куки. Продолжая просматривать сайт, Вы соглашаетесь на использование нами куки.</text>
+	</item>
+</message>

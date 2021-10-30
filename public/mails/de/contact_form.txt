@@ -1,0 +1,12 @@
+[{shop_name}]({shop_url})
+Ihre Nachricht wurde an den Kundendienst von {shop_name} weitergeleitet.
+
+Ihre Nachricht wurde an unseren Kundendienst weitergeleitet.
+
+Bestell-Nr.: {order_name}
+Artikel: {product_name}
+Angehängte Datei: {attached_file}
+
+Wir werden so schnell wie möglich antworten.
+
+[{shop_name}]({shop_url}) powered by [PrestaShop™](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

@@ -1,0 +1,25 @@
+<?php return array (
+  'parameters' => 
+  array (
+    'database_host' => 'localhost',
+    'database_port' => 3306,
+    'database_user' => 'wein_dev',
+    'database_password' => '&5g33qhtzgXkhUVo',
+    'database_name' => 'wein_dev',
+    'database_prefix' => 'nnpctx5el1',
+    'database_engine' => 'InnoDB',
+    'cookie_key' => 'XWhpoKUokFSHrNJ0XbtUHc92a8rGJ5QmrwUAjAJGLQkrtETMsOj8UUCB',
+    'cookie_iv' => 'dQiXIzbQ',
+    'new_cookie_key' => 'def00000864804b606c9080dde3b694c6d99bd6b3eebb4c992c04831d1a53424552096a02460f62ba425e3ffac6fab69e1eb5bb27dc757bf63f6dd7e42ca8adfabb09a69',
+    'ps_caching' => 'CacheMemcache',
+    'ps_cache_enable' => false,
+    'ps_creation_date' => '2021-01-22 11:46:27',
+    'secret' => 'G+nCacxL49S3hBMGbsNbuL4pgWtHLDbAxo0l0tQPSiJRfafitCr8KxX+imMqaBzz',
+    'mailer_transport' => 'smtp',
+    'mailer_host' => '127.0.0.1',
+    'mailer_user' => '',
+    'mailer_password' => '',
+    'locale' => 'en-US',
+    'use_debug_toolbar' => true,
+  ),
+);

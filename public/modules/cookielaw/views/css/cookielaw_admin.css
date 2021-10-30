@@ -1,0 +1,130 @@
+.cookielaw-alert {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.cookielaw-alert-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.cookielaw-alert-container:before, .container:after {
+    content: " ";
+    display: table;
+}
+
+.cookielaw-alert-container {
+    padding: 5px 0 5px 0;
+    font-size: 80%;
+    overflow: hidden;
+}
+
+.cookielaw-alert-container:after {
+    clear: both;
+}
+
+.cookielaw-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    color: #777777;
+}
+
+@media (min-width: 768px) {
+    .navbar-fixed-top, .navbar-fixed-bottom {
+        border-radius: 0;
+    }
+}
+
+.range_slider_input {
+    text-align: center;
+    border: 0 !important;
+    color: #f6931f !important;
+    font-weight: bold !important;
+}
+
+.ui-slider {
+    margin-top: 38px;
+}
+
+.cookielaw-alert-text {
+    vertical-align: middle;
+    display: inline;
+}
+
+.cookielaw-more-information {
+    display: inline;
+    border: none;
+}
+
+.cookielaw-alert-close {
+    display: inline;
+    border: none;
+}
+form#configuration_form .form-wrapper{
+    column-count: 2;
+    -webkit-column-rule: 1px double #000;
+    -moz-column-rule: 1px double #000;
+    column-rule: 1px dotted #000;
+}
+form#configuration_form .form-group {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+#module_group_1 + .example,
+#module_group_2 + .example,
+#module_group_3 + .example{
+    padding: 40px 40% 10px 40%;
+    background: rgb(239, 241, 242);
+    border-radius: 15px;
+    margin-top: -50px;
+}
+#contained_module_container,
+#full_list_module_container{
+    height: 600px;
+    overflow: auto;
+    border: 1px dotted #e4dfdf;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+#module_group_1,
+#module_group_2,
+#module_group_3 {
+    height: 200px;
+    overflow: auto;
+}
+.module_selected_container{
+    border: 1px dotted #e4dfdf;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+#advanced_cookie_settings .list-group-item{
+    cursor: move;
+}
+#advanced_cookie_settings .sortable_chosen{
+    color: white;
+    background-color: #2eacce;
+    cursor: move;
+}
+#advanced_cookie_settings .list-group-item:hover {
+    cursor: move;
+    box-shadow: 0 0 15px #333;
+    position: relative;
+    z-index: 99;
+    top: -2px;
+}
+[id^=module_group_] .icon-pencil {
+    cursor: pointer;
+    margin: 0 10px;
+}
+#contained_module_container .icon-pencil,
+#full_list_module_container .icon-pencil{
+    display: none;
+}
+.module_icon_container img{
+    max-width: 35px;
+}

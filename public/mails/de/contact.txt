@@ -1,0 +1,11 @@
+[{shop_name}]({shop_url})
+Nachricht von einem Kunden Ihres Shops {shop_name}
+
+E-Mail Kunde: {email}
+
+Nachricht Kunde: {message}
+
+Bestell-Nr.: {order_name}
+Angehängte Datei: {attached_file}
+
+[{shop_name}]({shop_url}) powered by [PrestaShop™](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

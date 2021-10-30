@@ -1,0 +1,14 @@
+[{shop_name}]({shop_url})
+Hallo {firstname} {lastname},
+
+Your guest account for {shop_name} has been transformed into a customer account.
+
+E-Mail-Adresse: {email}
+
+Click on the following link to set up your password:
+{url}
+
+Seien Sie bitte vorsichtig, wenn Sie Ihre Anmeldedaten anderen mitteilen.
+Sie können auf Ihr Konto auf unserer Webseite zugreifen: {shop_url} {shop_url}
+
+[{shop_name}]({shop_url}) powered by [PrestaShop™](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

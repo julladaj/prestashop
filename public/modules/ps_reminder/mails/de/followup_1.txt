@@ -1,0 +1,13 @@
+[{shop_name}]({shop_url})
+Hallo {firstname} {lastname},
+
+Uns ist aufgefallen, dass Sie bei Ihrem letzten Besuch auf {shop_name} Ihre Bestellung nicht abgeschlossen haben.
+
+Ihr Warenkorb wurde gespeichert, Sie können Ihre Bestellung abschließen, indem Sie auf unsere Shop-Seite gehen: {shop_url}
+
+As an incentive, we can give you a discount of {amount}% off your next order! This offer is valid for {days} days, so do not waste a moment!
+
+Hier ist Ihr Gutschein: {voucher_num}
+Kopieren Sie diesen Code bei Ihrer nächsten Bestellung während des Bezahlvorgangs einfach in das Gutscheinfeld.
+
+[{shop_name}]({shop_url}) powered by [PrestaShop™](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)
