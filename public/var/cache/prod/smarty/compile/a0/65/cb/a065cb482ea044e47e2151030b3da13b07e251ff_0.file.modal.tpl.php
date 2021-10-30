@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42ce4a85_54310681',
+  'unifunc' => 'content_617c9a0152dfb2_18215491',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a065cb482ea044e47e2151030b3da13b07e251ff' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/modal.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42ce4a85_54310681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a0152dfb2_18215491 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modal fade" id="<?php echo $_smarty_tpl->tpl_vars['modal_id']->value;?>
 " tabindex="-1">
 	<div class="modal-dialog <?php if ((isset($_smarty_tpl->tpl_vars['modal_class']->value))) {

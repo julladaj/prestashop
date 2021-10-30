@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/notifications_center.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42d50c19_97667221',
+  'unifunc' => 'content_617c9a015a22d2_57439922',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c8d97afc3688704eebac66f8eeb2a5e6e111e32e' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/notifications_center.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42d50c19_97667221 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a015a22d2_57439922 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="notif" class="notification-center dropdown dropdown-clickable">
   <button class="btn notification js-notification dropdown-toggle" data-toggle="dropdown">
     <i class="material-icons">notifications_none</i>

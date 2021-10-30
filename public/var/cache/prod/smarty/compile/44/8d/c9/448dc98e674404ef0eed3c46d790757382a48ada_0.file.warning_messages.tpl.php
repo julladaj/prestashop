@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/warning_messages.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42d7d488_93570628',
+  'unifunc' => 'content_617c9a015cfed1_80717046',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '448dc98e674404ef0eed3c46d790757382a48ada' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/warning_messages.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42d7d488_93570628 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a015cfed1_80717046 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['warnings']->value)) {?>
   <div class="bootstrap">
     <div class="alert alert-warning">

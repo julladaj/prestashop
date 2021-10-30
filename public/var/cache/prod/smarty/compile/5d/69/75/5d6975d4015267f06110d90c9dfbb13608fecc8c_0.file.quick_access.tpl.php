@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/quick_access.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42d39261_15875911',
+  'unifunc' => 'content_617c9a0158ad18_67693233',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5d6975d4015267f06110d90c9dfbb13608fecc8c' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/quick_access.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42d39261_15875911 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a0158ad18_67693233 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="dropdown quick-accesses">
   <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="quick_select">
     <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Quick Access','d'=>'Admin.Navigation.Header'),$_smarty_tpl ) );?>
@@ -33,7 +33,7 @@ $_smarty_tpl->tpl_vars['quick']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['quick']->value) {
 $_smarty_tpl->tpl_vars['quick']->do_else = false;
 ?>
-      <a class="dropdown-item<?php ob_start();
+      <a class="dropdown-item quick-row-link<?php ob_start();
 echo $_smarty_tpl->tpl_vars['quick']->value['link'];
 $_prefixVariable2 = ob_get_clean();
 if ($_smarty_tpl->tpl_vars['link']->value->matchQuickLink($_prefixVariable2)) {
@@ -50,7 +50,7 @@ $_smarty_tpl->_assignInScope('matchQuickLink', $_smarty_tpl->tpl_vars['quick']->
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="dropdown-divider"></div>
     <?php if ((isset($_smarty_tpl->tpl_vars['matchQuickLink']->value))) {?>
-      <a
+      <a id="quick-remove-link"
         class="dropdown-item js-quick-link"
         href="#"
         data-method="remove"
@@ -74,7 +74,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
       </a>
     <?php } else { ?>
-      <a
+      <a id="quick-add-link"
         class="dropdown-item js-quick-link"
         href="#"
         data-rand="<?php echo rand(1,200);?>
@@ -96,7 +96,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
       </a>
     <?php }?>
-    <a class="dropdown-item" href="<?php echo addslashes($_smarty_tpl->tpl_vars['link']->value->getAdminLink("AdminQuickAccesses"));?>
+    <a id="quick-manage-link" class="dropdown-item" href="<?php echo addslashes($_smarty_tpl->tpl_vars['link']->value->getAdminLink("AdminQuickAccesses"));?>
 ">
       <i class="material-icons">settings</i>
       <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Manage your quick accesses','d'=>'Admin.Navigation.Header'),$_smarty_tpl ) );?>

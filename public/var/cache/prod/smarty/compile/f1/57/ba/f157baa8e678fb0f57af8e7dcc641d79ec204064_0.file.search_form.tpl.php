@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/search_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42d42e40_97355397',
+  'unifunc' => 'content_617c9a015948f1_57251230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f157baa8e678fb0f57af8e7dcc641d79ec204064' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/search_form.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42d42e40_97355397 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a015948f1_57251230 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <form id="header_search"
       class="bo_search_form dropdown-form js-dropdown-form collapsed"
@@ -35,8 +35,9 @@ index.php?controller=AdminSearch&amp;token=<?php echo call_user_func_array( $_sm
   <?php }?>
   <div class="input-group">
     <input type="text" class="form-control js-form-search" id="bo_query" name="bo_query" value="<?php echo $_smarty_tpl->tpl_vars['bo_query']->value;?>
-" placeholder="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Search (e.g.: product reference, customer name…)'),$_smarty_tpl ) );?>
- d='Admin.Navigation.Header'">
+" placeholder="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Search (e.g.: product reference, customer name…)','d'=>'Admin.Navigation.Header'),$_smarty_tpl ) );?>
+" aria-label="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Searchbar','d'=>'Admin.Navigation.Header'),$_smarty_tpl ) );?>
+">
     <div class="input-group-append">
       <button type="button" class="btn btn-outline-secondary dropdown-toggle js-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Everywhere','d'=>'Admin.Navigation.Header'),$_smarty_tpl ) );?>

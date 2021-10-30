@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42d2e708_24850122',
+  'unifunc' => 'content_617c9a01580632_26699983',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e1dc78f983fa926843e2088a11d5d34c9fd2a7e' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/layout.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:error.tpl' => 1,
   ),
 ),false)) {
-function content_617bba42d2e708_24850122 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a01580632_26699983 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="<?php echo $_smarty_tpl->tpl_vars['iso']->value;?>
 ">
@@ -112,11 +112,12 @@ if ($_smarty_tpl->tpl_vars['collapse_menu']->value) {?> page-sidebar-closed<?php
         </div>
       <?php }?>
 
-      <div class="component" id="header-shop-list-container">
-        <?php $_smarty_tpl->_subTemplateRender("file:components/layout/shop_list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+      <?php if (!(isset($_smarty_tpl->tpl_vars['hideLegacyStoreContextSelector']->value)) || !$_smarty_tpl->tpl_vars['hideLegacyStoreContextSelector']->value) {?>
+        <div class="component" id="header-shop-list-container">
+          <?php $_smarty_tpl->_subTemplateRender("file:components/layout/shop_list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-      </div>
-
+        </div>
+      <?php }?>
       <?php if ($_smarty_tpl->tpl_vars['show_new_orders']->value || $_smarty_tpl->tpl_vars['show_new_customers']->value || $_smarty_tpl->tpl_vars['show_new_messages']->value) {?>
         <div class="component header-right-component" id="header-notifications-container">
           <?php $_smarty_tpl->_subTemplateRender("file:components/layout/notifications_center.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

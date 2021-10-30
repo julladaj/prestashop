@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/nav_bar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42d699d6_09545652',
+  'unifunc' => 'content_617c9a015bb586_94330915',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86d3964803040603f84c8cf154c92ce05bbe5084' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/components/layout/nav_bar.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42d699d6_09545652 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a015bb586_94330915 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="nav-bar d-none d-print-none d-md-block">
   <span class="menu-collapse" data-toggle-url="<?php echo $_smarty_tpl->tpl_vars['toggle_navigation_url']->value;?>
 ">
@@ -29,7 +29,7 @@ function content_617bba42d699d6_09545652 (Smarty_Internal_Template $_smarty_tpl)
   </span>
 
   <div class="nav-bar-overflow">
-    <ul class="main-menu">
+      <ul class="main-menu<?php if ($_smarty_tpl->tpl_vars['collapse_menu']->value) {?> sidebar-closed<?php }?>">
       <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tabs']->value, 'level1');
 $_smarty_tpl->tpl_vars['level1']->do_else = true;
@@ -50,7 +50,7 @@ $_smarty_tpl->tpl_vars['level1']->do_else = false;
 
           <?php if ($_smarty_tpl->tpl_vars['level1']->value['icon'] != '') {?>
 
-            <li class="link-levelone <?php if ($_smarty_tpl->tpl_vars['level1']->value['current']) {?>-active<?php }?>" data-submenu="<?php echo $_smarty_tpl->tpl_vars['level1']->value['id_tab'];?>
+            <li class="link-levelone<?php if ($_smarty_tpl->tpl_vars['level1']->value['current']) {?> link-levelone-active<?php }?>" data-submenu="<?php echo $_smarty_tpl->tpl_vars['level1']->value['id_tab'];?>
 " id="tab-<?php echo $_smarty_tpl->tpl_vars['level1']->value['class_name'];?>
 ">
               <a href="<?php echo $_smarty_tpl->tpl_vars['level1Href']->value;?>
@@ -63,7 +63,7 @@ $_smarty_tpl->tpl_vars['level1']->do_else = false;
 
           <?php } else { ?>
 
-            <li class="category-title <?php if ($_smarty_tpl->tpl_vars['level1']->value['current']) {?>-active<?php }?>" data-submenu="<?php echo $_smarty_tpl->tpl_vars['level1']->value['id_tab'];?>
+            <li class="category-title<?php if ($_smarty_tpl->tpl_vars['level1']->value['current']) {?> link-active<?php }?>" data-submenu="<?php echo $_smarty_tpl->tpl_vars['level1']->value['id_tab'];?>
 " id="tab-<?php echo $_smarty_tpl->tpl_vars['level1']->value['class_name'];?>
 ">
                 <span class="title"><?php echo $_smarty_tpl->tpl_vars['level1Name']->value;?>
@@ -87,9 +87,9 @@ $_smarty_tpl->tpl_vars['level2']->do_else = false;
                   <?php $_smarty_tpl->_assignInScope('levelOneClass', '');?>
 
                   <?php if ($_smarty_tpl->tpl_vars['level2']->value['current'] && !$_smarty_tpl->tpl_vars['collapse_menu']->value) {?>
-                      <?php $_smarty_tpl->_assignInScope('levelOneClass', " -active open ul-open");?>
+                      <?php $_smarty_tpl->_assignInScope('levelOneClass', " link-active open ul-open");?>
                   <?php } elseif ($_smarty_tpl->tpl_vars['level2']->value['current'] && $_smarty_tpl->tpl_vars['collapse_menu']->value) {?>
-                      <?php $_smarty_tpl->_assignInScope('levelOneClass', " -active");?>
+                      <?php $_smarty_tpl->_assignInScope('levelOneClass', " link-active");?>
                   <?php }?>
 
                   <li class="link-levelone<?php if (count($_smarty_tpl->tpl_vars['level2']->value['sub_tabs'])) {?> has_submenu<?php }
@@ -134,7 +134,7 @@ $_smarty_tpl->tpl_vars['level3']->do_else = false;
                                 <?php $_smarty_tpl->_assignInScope('level3Name', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['level3']->value['class_name'],'html','UTF-8' )));?>
                               <?php }?>
 
-                              <li class="link-leveltwo <?php if ($_smarty_tpl->tpl_vars['level3']->value['current']) {?>-active<?php }?>" data-submenu="<?php echo $_smarty_tpl->tpl_vars['level3']->value['id_tab'];?>
+                              <li class="link-leveltwo<?php if ($_smarty_tpl->tpl_vars['level3']->value['current']) {?> link-active<?php }?>" data-submenu="<?php echo $_smarty_tpl->tpl_vars['level3']->value['id_tab'];?>
 " id="subtab-<?php echo $_smarty_tpl->tpl_vars['level3']->value['class_name'];?>
 ">
                                 <a href="<?php echo $_smarty_tpl->tpl_vars['level3Href']->value;?>

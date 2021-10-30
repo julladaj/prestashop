@@ -5,7 +5,7 @@
       <trans-unit id="44aa13304026bb46ad79f4151f16634a" approved="yes">
         <source>(waiting for validation)</source>
         <target state="final">(Warte auf Bestätigung)</target>
-        <note>Line: 630</note>
+        <note>Line: 654</note>
       </trans-unit>
     </body>
   </file>
@@ -134,6 +134,16 @@
         <target state="final"><![CDATA[Wenn Sie im Shop auf <a href="{history_url}">"Mein Konto"</a> klicken, finden Sie unter dem Menüpunkt  <a href="{my_account_url}">"Ihre Rückvergütungen"</a> den Erstattungs-Beleg zum Download bereit.]]></target>
         <note>Line: 45</note>
       </trans-unit>
+      <trans-unit id="4c15700279d273ce67d98810a4b87943" approved="yes">
+        <source>We have generated a credit slip in your name for order with the reference [1]{order_name}[/1].</source>
+        <target state="final">Wir haben eine Rechnungskorrektur für die Bestellung Nr.  [1]{order_name}[/1] auf Ihren Namen ausgestellt.</target>
+        <note>Line: 29</note>
+      </trans-unit>
+      <trans-unit id="313c18a58c9b461fbb29be3e39837d95" approved="yes">
+        <source><![CDATA[Review this credit slip and download your invoice on our shop, go to the <a href="{history_url}" target="_blank">%credit_slips_label%</a> section of your customer account.]]></source>
+        <target state="final"><![CDATA[Überprüfen Sie die Rechnungskorrektur und laden Sie sie in unserem Shop herunter, indem Sie zum Abschnitt <a href="{history_url}" target="_blank">%credit_slips_label%</a> Ihres Kundenkontos gehen.]]></target>
+        <note>Line: 45</note>
+      </trans-unit>
     </body>
   </file>
   <file original="mails/themes/classic/core/download_product.html.twig" source-language="en" target-language="de" datatype="plaintext">
@@ -145,7 +155,7 @@
       </trans-unit>
       <trans-unit id="30acb55a5efc4a32a30a0c3db85f37d1" approved="yes">
         <source>Product(s) now available for download</source>
-        <target state="final">Artikel sind nun zum Download verfügbar</target>
+        <target state="final">Artikelzum Download</target>
         <note>Line: 25</note>
       </trans-unit>
     </body>
@@ -404,57 +414,6 @@
       </trans-unit>
     </body>
   </file>
-  <file original="mails/themes/classic/modules/followup/followup_1.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="a037426f7ede13b30759469aaca5ad91" approved="yes">
-        <source>Your {shop_name} login details</source>
-        <target state="final">Ihre Anmeldedaten für {shop_name}</target>
-        <note>Line: 53</note>
-      </trans-unit>
-      <trans-unit id="ca0c09ad63f8cd2f732058be8d2b3a97" approved="yes">
-        <source>We noticed that during your last visit on {shop_name}, you did not complete the order you had started.</source>
-        <target state="final">Uns ist aufgefallen, dass Sie bei Ihrem letzten Besuch auf {shop_name} Ihre Bestellung nicht abgeschlossen haben.</target>
-        <note>Line: 29</note>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="mails/themes/classic/modules/followup/followup_2.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="212dcee7c3ca3ee5fbae444b2f07c62d" approved="yes">
-        <source>Thank you for your order at {shop_name}.</source>
-        <target state="final">Danke für Ihre Bestellung bei {shop_name}.</target>
-        <note>Line: 8</note>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="mails/themes/classic/modules/followup/followup_3.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="5a230b8b0490a33cf1fa3a577e1b4ef3" approved="yes">
-        <source>You are one of our best customers and as such we want to thank you for your continued patronage.</source>
-        <target state="final">Sie sind einer unserer besten Kunden, deshalb möchten wir Ihnen für Ihr Vertrauen danken.</target>
-        <note>Line: 25</note>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="mails/themes/classic/modules/followup/followup_4.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="42578524d7fb1953f903bcc5160495ea" approved="yes">
-        <source>Here is your coupon:</source>
-        <target state="final">Hier ist Ihr Gutschein:</target>
-        <note>Line: 51</note>
-      </trans-unit>
-      <trans-unit id="24986b852e72fcfba407bd807f790abd" approved="yes">
-        <source>Enter this code in your shopping cart to get your discount.</source>
-        <target state="final">Kopieren Sie diesen Code bei Ihrer nächsten Bestellung während des Bezahlvorgangs einfach in das Gutscheinfeld.</target>
-        <note>Line: 52</note>
-      </trans-unit>
-      <trans-unit id="7ed5b90c2f87440a6e83fc35dca83242" approved="yes">
-        <source>You are one of our best customers, however you have not placed an order in {days_threshold} days.</source>
-        <target state="final">Sie sind einer unserer besten Kunden, seit {days_threshold} Tagen haben Sie nichts mehr bestellt.</target>
-        <note>Line: 29</note>
-      </trans-unit>
-    </body>
-  </file>
   <file original="mails/themes/classic/modules/ps_emailalerts/customer_qty.html.twig" source-language="en" target-language="de" datatype="plaintext">
     <body>
       <trans-unit id="5b736bebe50e10240ff58d486494dc7b" approved="yes">
@@ -573,6 +532,57 @@
       <trans-unit id="289f1fb0b0a7ed1c03d1f1f597666f67" approved="yes">
         <source>Regarding your newsletter subscription, we are pleased to offer you the following voucher:</source>
         <target state="final">Sie haben unseren Newsletter abonniert. Als Dankeschön erhalten Sie den folgenden Gutschein:</target>
+        <note>Line: 29</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/classic/modules/ps_reminder/followup_1.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="a037426f7ede13b30759469aaca5ad91" approved="yes">
+        <source>Your {shop_name} login details</source>
+        <target state="final">Ihre Anmeldedaten für {shop_name}</target>
+        <note>Line: 53</note>
+      </trans-unit>
+      <trans-unit id="ca0c09ad63f8cd2f732058be8d2b3a97" approved="yes">
+        <source>We noticed that during your last visit on {shop_name}, you did not complete the order you had started.</source>
+        <target state="final">Uns ist aufgefallen, dass Sie bei Ihrem letzten Besuch auf {shop_name} Ihre Bestellung nicht abgeschlossen haben.</target>
+        <note>Line: 29</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/classic/modules/ps_reminder/followup_2.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="212dcee7c3ca3ee5fbae444b2f07c62d" approved="yes">
+        <source>Thank you for your order at {shop_name}.</source>
+        <target state="final">Danke für Ihre Bestellung bei {shop_name}.</target>
+        <note>Line: 8</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/classic/modules/ps_reminder/followup_3.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="5a230b8b0490a33cf1fa3a577e1b4ef3" approved="yes">
+        <source>You are one of our best customers and as such we want to thank you for your continued patronage.</source>
+        <target state="final">Sie sind einer unserer besten Kunden, deshalb möchten wir Ihnen für Ihr Vertrauen danken.</target>
+        <note>Line: 25</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/classic/modules/ps_reminder/followup_4.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="42578524d7fb1953f903bcc5160495ea" approved="yes">
+        <source>Here is your coupon:</source>
+        <target state="final">Hier ist Ihr Gutschein:</target>
+        <note>Line: 51</note>
+      </trans-unit>
+      <trans-unit id="24986b852e72fcfba407bd807f790abd" approved="yes">
+        <source>Enter this code in your shopping cart to get your discount.</source>
+        <target state="final">Kopieren Sie diesen Code bei Ihrer nächsten Bestellung während des Bezahlvorgangs einfach in das Gutscheinfeld.</target>
+        <note>Line: 52</note>
+      </trans-unit>
+      <trans-unit id="7ed5b90c2f87440a6e83fc35dca83242" approved="yes">
+        <source>You are one of our best customers, however you have not placed an order in {days_threshold} days.</source>
+        <target state="final">Sie sind einer unserer besten Kunden, seit {days_threshold} Tagen haben Sie nichts mehr bestellt.</target>
         <note>Line: 29</note>
       </trans-unit>
     </body>
@@ -719,6 +729,26 @@
         <target state="final">Banküberweisung</target>
         <note>Line: 3</note>
       </trans-unit>
+      <trans-unit id="e59458c2ad3850466357a1cd342adc51" approved="yes">
+        <source>Pending payment</source>
+        <target state="final">Ausstehende Zahlung</target>
+        <note>Line: 184</note>
+      </trans-unit>
+      <trans-unit id="8f4dccd9e6900a3bbae488901ba81ce5" approved="yes">
+        <source>Payment method: bank wire</source>
+        <target state="final">Zahlungsart: Banküberweisung</target>
+        <note>Line: 314</note>
+      </trans-unit>
+      <trans-unit id="b59639f1f1bf84129e44b83fe192b10a" approved="yes">
+        <source>You have decided to pay by bank wire.</source>
+        <target state="final">Sie möchten per Banküberweisung zahlen.</target>
+        <note>Line: 379</note>
+      </trans-unit>
+      <trans-unit id="920fcf4696dd1caa2d08eae6ebc8d29a" approved="yes">
+        <source>Here is the information you need for your transfer:</source>
+        <target state="final">Hier sind die notwendigen Angaben für Ihre Zahlung:</target>
+        <note>Line: 380</note>
+      </trans-unit>
     </body>
   </file>
   <file original="mails/themes/modern/core/cheque.html.twig" source-language="en" target-language="de" datatype="plaintext">
@@ -743,10 +773,25 @@
         <target state="final">Vielen Dank für Ihre Bestellung bei {shop_name}!</target>
         <note>Line: 50</note>
       </trans-unit>
+      <trans-unit id="97b07b4e5caa086464d9f38956718d2b" approved="yes">
+        <source>Your order with the reference [1]{order_name}[/1] has been placed successfully. You can expect [1]delivery as soon as your payment is received[/1].</source>
+        <target state="final">Ihre Bestellung [1]{order_name}[/1] wurde erfolgreich aufgenommen und wird versendet, sobald die Zahlung eingegangen ist.</target>
+        <note>Line: 249</note>
+      </trans-unit>
       <trans-unit id="060bf2d587991d8f090a1309b285291c" approved="yes">
         <source>Check</source>
         <target state="final">Scheck</target>
         <note>Line: 3</note>
+      </trans-unit>
+      <trans-unit id="0664188509e5edc8daac0d8c80bc05b3" approved="yes">
+        <source>Awaiting payment by check</source>
+        <target state="final">Warten auf Scheckzahlung</target>
+        <note>Line: 184</note>
+      </trans-unit>
+      <trans-unit id="6a9e91ee7fe91c99fc2b5915a2555a57" approved="yes">
+        <source>Payment method: check</source>
+        <target state="final">Zahlungsart: Scheck</target>
+        <note>Line: 314</note>
       </trans-unit>
       <trans-unit id="0cce70a6fc36b8ed06d4a0241b36eecb" approved="yes">
         <source>You have decided to pay by bank check.</source>
@@ -822,13 +867,8 @@
       </trans-unit>
       <trans-unit id="933bd01e99683693ad9ddf8405040681" approved="yes">
         <source><![CDATA[Review this credit slip and download your invoice on our shop, go to the <a href="{history_url}" target="_blank">Credit slips</a> section of your customer account.]]></source>
-        <target state="final"><![CDATA[Um diese Rechnungskorrektur zu prüfen und in unserem Shop herunterzuladen, gehen Sie zum Abschnitt "<a href="{history_url}" target="_blank">Rechnungskorrekturen</a>" Ihres Kundenkontos.]]></target>
+        <target state="final"><![CDATA[Um diese Rechnungskorrektur zu prüfen und Ihre Rechnung in unserem Shop herunterzuladen, gehen Sie zum Abschnitt "<a href="{history_url}" target="_blank">Bestellverlauf</a>" Ihres Kundenkontos.]]></target>
         <note>Line: 310</note>
-      </trans-unit>
-      <trans-unit id="313c18a58c9b461fbb29be3e39837d95" approved="yes">
-        <source><![CDATA[Review this credit slip and download your invoice on our shop, go to the <a href="{history_url}" target="_blank">%credit_slips_label%</a> section of your customer account.]]></source>
-        <target state="final"><![CDATA[Überprüfen Sie die Rechnungskorrektur und laden Sie sie in unserem Shop herunter, indem Sie zum Abschnitt <a href="{history_url}" target="_blank">%credit_slips_label%</a> Ihres Kundenkontos gehen.]]></target>
-        <note>Line: 303</note>
       </trans-unit>
     </body>
   </file>
@@ -1007,7 +1047,7 @@
     <body>
       <trans-unit id="fb077ecba55e5552916bde26d8b9e794" approved="yes">
         <source>Order confirmation</source>
-        <target state="final">Bestellbestätigung</target>
+        <target state="final">Bestätigung der Bestellung</target>
         <note>Line: 3</note>
       </trans-unit>
       <trans-unit id="ca102bf009d3e0d62a4fc6918b20110e" approved="yes">
@@ -1351,102 +1391,6 @@
       </trans-unit>
     </body>
   </file>
-  <file original="mails/themes/modern/modules/followup/followup_1.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="784e102689c17fd18fe94135d4fa864d" approved="yes">
-        <source>Your cart at {shop_name}</source>
-        <target state="final">Ihr Warenkorb bei {shop_name}</target>
-        <note>Line: 177</note>
-      </trans-unit>
-      <trans-unit id="804e4e067b0e61e122e1a35771fcf144" approved="yes">
-        <source>Follow up 1</source>
-        <target state="final">Follow up 1</target>
-        <note>Line: 3</note>
-      </trans-unit>
-      <trans-unit id="b9018fa1aff4ac6de7e50d6a8f1c9e4a" approved="yes">
-        <source>Thanks for your visit. However, it looks like you did not complete your purchase.</source>
-        <target state="final">Vielen Dank für Ihren Besuch. Es sieht jedoch so aus, als hätten Sie Ihren Kauf nicht abgeschlossen.</target>
-        <note>Line: 242</note>
-      </trans-unit>
-      <trans-unit id="14c90ec7c3372b9f39c9cf24323bd959" approved="yes">
-        <source>Your cart has been saved, you can go back to your order on our shop:</source>
-        <target state="final">Ihr Warenkorb wurde gespeichert, Sie können zu Ihrer Bestellung in unserem Shop zurückkehren:</target>
-        <note>Line: 247</note>
-      </trans-unit>
-      <trans-unit id="938ad8b6f0f1e5c4663bc171ad56822e" approved="yes">
-        <source>Your voucher code on {shop_name}</source>
-        <target state="final">Ihr Gutscheincode bei {shop_name}</target>
-        <note>Line: 317</note>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="mails/themes/modern/modules/followup/followup_2.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="7ff89d85f528f79efd0a85c01a43cb62" approved="yes">
-        <source>Follow up 2</source>
-        <target state="final">Follow up 2</target>
-        <note>Line: 3</note>
-      </trans-unit>
-      <trans-unit id="605fc3ecd313608fe8c6cbbed5a25261" approved="yes">
-        <source>Thanks for your order.</source>
-        <target state="final">Vielen Dank für Ihre Bestellung.</target>
-        <note>Line: 50</note>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="mails/themes/modern/modules/followup/followup_3.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="66472df69ec288388183a74a6e34e942" approved="yes">
-        <source>Thanks for your trust.</source>
-        <target state="final">Danke für Ihr Vertrauen.</target>
-        <note>Line: 50</note>
-      </trans-unit>
-      <trans-unit id="383126b6a239da6f7d483220c63a46e2" approved="yes">
-        <source>Follow up 3</source>
-        <target state="final">Follow up 3</target>
-        <note>Line: 3</note>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="mails/themes/modern/modules/followup/followup_4.html.twig" source-language="en" target-language="de" datatype="plaintext">
-    <body>
-      <trans-unit id="8dec16ec73558f6fb2515cce4293ce6f" approved="yes">
-        <source>Your cart has been saved, you can resume your order by visiting our shop:</source>
-        <target state="final">Ihr Warenkorb wurde gespeichert, Sie können Ihre Bestellung abschließen, indem Sie auf unsere Shop-Seite gehen:</target>
-        <note>Line: 247</note>
-      </trans-unit>
-      <trans-unit id="18df3f8153de940176206b06a3610f80" approved="yes">
-        <source>We are pleased to offer you a discount of [1]{amount}%[/1] off your next order. And this offer is valid for [1]{days}[/1] days, so do not wait any longer!</source>
-        <target state="final">Wir freuen uns, Ihnen einen Rabatt von [1]{amount} %[/1] auf Ihre nächste Bestellung anbieten zu können. Dieses Angebot ist gültig für [1]{days}[/1] Tage, also warten Sie nicht zu lange!</target>
-        <note>Line: 252</note>
-      </trans-unit>
-      <trans-unit id="5416511766be8537f357142a81ccd7a7" approved="yes">
-        <source>Here is your VOUCHER CODE:</source>
-        <target state="final">Hier ist Ihr GUTSCHEIN-CODE:</target>
-        <note>Line: 317</note>
-      </trans-unit>
-      <trans-unit id="ececa54d96395d3afa79cdce8e7e0bd6" approved="yes">
-        <source>Enter this code in your shopping cart to get the discount.</source>
-        <target state="final">Geben Sie diesen Code in Ihrem Warenkorb ein, um den Rabatt zu erhalten.</target>
-        <note>Line: 322</note>
-      </trans-unit>
-      <trans-unit id="a5672f20db3e09abb35f909cf56f3b23" approved="yes">
-        <source>Follow up 4</source>
-        <target state="final">Follow up 4</target>
-        <note>Line: 3</note>
-      </trans-unit>
-      <trans-unit id="1e6f48752a20a5c6dc2f387c18777136" approved="yes">
-        <source>Your cart on {shop_name}</source>
-        <target state="final">Ihr Warenkorb bei {shop_name}</target>
-        <note>Line: 177</note>
-      </trans-unit>
-      <trans-unit id="8dfa91d2853e941e80553ab1336b6459" approved="yes">
-        <source>Congratulations, you are one of our best customers! However, it looks like you have not placed an order since {days_threshold} days.</source>
-        <target state="final">Herzlichen Glückwunsch, Sie sind einer unserer besten Kunden! Es sieht jedoch so aus, als hätten Sie seit {days_threshold} Tagen keine Bestellung aufgegeben.</target>
-        <note>Line: 242</note>
-      </trans-unit>
-    </body>
-  </file>
   <file original="mails/themes/modern/modules/ps_emailalerts/customer_qty.html.twig" source-language="en" target-language="de" datatype="plaintext">
     <body>
       <trans-unit id="9b096ae55ce4d2bb889392144c104069" approved="yes">
@@ -1729,6 +1673,102 @@
       <trans-unit id="f6c3e4834d385f4923121b89bdee29c0" approved="yes">
         <source>Thank you for subscribing to our newsletter. We are pleased to offer you the following voucher:</source>
         <target state="final">Vielen Dank für die Anmeldung zu unserem Newsletter. Wir freuen uns, Ihnen folgenden Gutschein anbieten zu können:</target>
+        <note>Line: 242</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/modern/modules/ps_reminder/followup_1.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="784e102689c17fd18fe94135d4fa864d" approved="yes">
+        <source>Your cart at {shop_name}</source>
+        <target state="final">Ihr Warenkorb bei {shop_name}</target>
+        <note>Line: 177</note>
+      </trans-unit>
+      <trans-unit id="804e4e067b0e61e122e1a35771fcf144" approved="yes">
+        <source>Follow up 1</source>
+        <target state="final">Follow up 1</target>
+        <note>Line: 3</note>
+      </trans-unit>
+      <trans-unit id="b9018fa1aff4ac6de7e50d6a8f1c9e4a" approved="yes">
+        <source>Thanks for your visit. However, it looks like you did not complete your purchase.</source>
+        <target state="final">Vielen Dank für Ihren Besuch. Es sieht jedoch so aus, als hätten Sie Ihren Kauf nicht abgeschlossen.</target>
+        <note>Line: 242</note>
+      </trans-unit>
+      <trans-unit id="14c90ec7c3372b9f39c9cf24323bd959" approved="yes">
+        <source>Your cart has been saved, you can go back to your order on our shop:</source>
+        <target state="final">Ihr Warenkorb wurde gespeichert, Sie können zu Ihrer Bestellung in unserem Shop zurückkehren:</target>
+        <note>Line: 247</note>
+      </trans-unit>
+      <trans-unit id="938ad8b6f0f1e5c4663bc171ad56822e" approved="yes">
+        <source>Your voucher code on {shop_name}</source>
+        <target state="final">Ihr Gutscheincode bei {shop_name}</target>
+        <note>Line: 317</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/modern/modules/ps_reminder/followup_2.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="7ff89d85f528f79efd0a85c01a43cb62" approved="yes">
+        <source>Follow up 2</source>
+        <target state="final">Follow up 2</target>
+        <note>Line: 3</note>
+      </trans-unit>
+      <trans-unit id="605fc3ecd313608fe8c6cbbed5a25261" approved="yes">
+        <source>Thanks for your order.</source>
+        <target state="final">Vielen Dank für Ihre Bestellung.</target>
+        <note>Line: 50</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/modern/modules/ps_reminder/followup_3.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="66472df69ec288388183a74a6e34e942" approved="yes">
+        <source>Thanks for your trust.</source>
+        <target state="final">Danke für Ihr Vertrauen.</target>
+        <note>Line: 50</note>
+      </trans-unit>
+      <trans-unit id="383126b6a239da6f7d483220c63a46e2" approved="yes">
+        <source>Follow up 3</source>
+        <target state="final">Follow up 3</target>
+        <note>Line: 3</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="mails/themes/modern/modules/ps_reminder/followup_4.html.twig" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+      <trans-unit id="8dec16ec73558f6fb2515cce4293ce6f" approved="yes">
+        <source>Your cart has been saved, you can resume your order by visiting our shop:</source>
+        <target state="final">Ihr Warenkorb wurde gespeichert, Sie können Ihre Bestellung abschließen, indem Sie auf unsere Shop-Seite gehen:</target>
+        <note>Line: 247</note>
+      </trans-unit>
+      <trans-unit id="18df3f8153de940176206b06a3610f80" approved="yes">
+        <source>We are pleased to offer you a discount of [1]{amount}%[/1] off your next order. And this offer is valid for [1]{days}[/1] days, so do not wait any longer!</source>
+        <target state="final">Wir freuen uns, Ihnen einen Rabatt von [1]{amount} %[/1] auf Ihre nächste Bestellung anbieten zu können. Dieses Angebot ist gültig für [1]{days}[/1] Tage, also warten Sie nicht zu lange!</target>
+        <note>Line: 252</note>
+      </trans-unit>
+      <trans-unit id="5416511766be8537f357142a81ccd7a7" approved="yes">
+        <source>Here is your VOUCHER CODE:</source>
+        <target state="final">Hier ist Ihr GUTSCHEIN-CODE:</target>
+        <note>Line: 317</note>
+      </trans-unit>
+      <trans-unit id="ececa54d96395d3afa79cdce8e7e0bd6" approved="yes">
+        <source>Enter this code in your shopping cart to get the discount.</source>
+        <target state="final">Geben Sie diesen Code in Ihrem Warenkorb ein, um den Rabatt zu erhalten.</target>
+        <note>Line: 322</note>
+      </trans-unit>
+      <trans-unit id="a5672f20db3e09abb35f909cf56f3b23" approved="yes">
+        <source>Follow up 4</source>
+        <target state="final">Follow up 4</target>
+        <note>Line: 3</note>
+      </trans-unit>
+      <trans-unit id="1e6f48752a20a5c6dc2f387c18777136" approved="yes">
+        <source>Your cart on {shop_name}</source>
+        <target state="final">Ihr Warenkorb bei {shop_name}</target>
+        <note>Line: 177</note>
+      </trans-unit>
+      <trans-unit id="8dfa91d2853e941e80553ab1336b6459" approved="yes">
+        <source>Congratulations, you are one of our best customers! However, it looks like you have not placed an order since {days_threshold} days.</source>
+        <target state="final">Herzlichen Glückwunsch, Sie sind einer unserer besten Kunden! Es sieht jedoch so aus, als hätten Sie seit {days_threshold} Tagen keine Bestellung aufgegeben.</target>
         <note>Line: 242</note>
       </trans-unit>
     </body>

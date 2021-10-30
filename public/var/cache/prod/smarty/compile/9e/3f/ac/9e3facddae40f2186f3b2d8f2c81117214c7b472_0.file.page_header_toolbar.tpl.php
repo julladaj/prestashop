@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/page_header_toolbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42cff900_21854268',
+  'unifunc' => 'content_617c9a01551a35_09464529',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e3facddae40f2186f3b2d8f2c81117214c7b472' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/backoffice/themes/new-theme/template/page_header_toolbar.tpl',
-      1 => 1635496043,
+      1 => 1635555689,
       2 => 'file',
     ),
   ),
@@ -20,27 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42cff900_21854268 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a01551a35_09464529 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 
 <div class="header-toolbar d-print-none">
+  <?php echo $_smarty_tpl->tpl_vars['multistore_header']->value;?>
+
   <div class="container-fluid">
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1743843949617bba42cea862_65852917', 'pageBreadcrumb');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_956933118617c9a01533ee1_32145637', 'pageBreadcrumb');
 ?>
 
 
     <div class="title-row">
       <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2076554072617bba42ced2f2_71318124', 'pageTitle');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1796025009617c9a015367a9_75579583', 'pageTitle');
 ?>
 
 
       <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_532975808617bba42ceed97_92281965', 'toolbarBox');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_220242999617c9a015381d1_54036520', 'toolbarBox');
 ?>
 
     </div>
@@ -123,17 +125,93 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </ul>
     </div>
   <?php }?>
+
+  <div class="btn-floating">
+    <button class="btn btn-primary collapsed" data-toggle="collapse" data-target=".btn-floating-container" aria-expanded="false">
+      <i class="material-icons">add</i>
+    </button>
+    <div class="btn-floating-container collapse">
+      <div class="btn-floating-menu">
+        <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayDashboardToolbarTopMenu'),$_smarty_tpl ) );?>
+
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['toolbar_btn']->value, 'btn', false, 'k');
+$_smarty_tpl->tpl_vars['btn']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['btn']->value) {
+$_smarty_tpl->tpl_vars['btn']->do_else = false;
+?>
+          <?php if ($_smarty_tpl->tpl_vars['k']->value != 'back' && $_smarty_tpl->tpl_vars['k']->value != 'modules-list') {?>
+            <a
+              class="btn btn-floating-item <?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['target'])) && $_smarty_tpl->tpl_vars['btn']->value['target']) {?> _blank<?php }?> pointer"<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['href']))) {?>
+              id="page-header-desc-floating-<?php echo $_smarty_tpl->tpl_vars['table']->value;?>
+-<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['imgclass']))) {
+echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['btn']->value['imgclass'] ));
+} else {
+echo $_smarty_tpl->tpl_vars['k']->value;
+}?>"
+              href="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['btn']->value['href'] ));?>
+"<?php }?>
+              title="<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['help']))) {
+echo $_smarty_tpl->tpl_vars['btn']->value['help'];
+} else {
+echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['btn']->value['desc'] ));
+}?>"<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['js'])) && $_smarty_tpl->tpl_vars['btn']->value['js']) {?>
+              onclick="<?php echo $_smarty_tpl->tpl_vars['btn']->value['js'];?>
+"<?php }
+if ((isset($_smarty_tpl->tpl_vars['btn']->value['modal_target'])) && $_smarty_tpl->tpl_vars['btn']->value['modal_target']) {?>
+              data-target="<?php echo $_smarty_tpl->tpl_vars['btn']->value['modal_target'];?>
+"
+              data-toggle="modal"<?php }
+if ((isset($_smarty_tpl->tpl_vars['btn']->value['help']))) {?>
+              data-toggle="pstooltip"
+              data-placement="bottom"<?php }?>
+            >
+              <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['btn']->value['desc'] ));?>
+
+              <?php if (!empty($_smarty_tpl->tpl_vars['btn']->value['icon'])) {?><i class="material-icons"><?php echo $_smarty_tpl->tpl_vars['btn']->value['icon'];?>
+</i><?php }?>
+            </a>
+          <?php }?>
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+        <?php if ((isset($_smarty_tpl->tpl_vars['help_link']->value)) && $_smarty_tpl->tpl_vars['help_link']->value != false) {?>
+          <?php if ($_smarty_tpl->tpl_vars['enableSidebar']->value) {?>
+            <a class="btn btn-floating-item btn-help btn-sidebar" href="#"
+               title="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Help','d'=>'Admin.Global'),$_smarty_tpl ) );?>
+"
+               data-toggle="sidebar"
+               data-target="#right-sidebar"
+               data-url="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['help_link']->value ));?>
+"
+            >
+              <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Help','d'=>'Admin.Global'),$_smarty_tpl ) );?>
+
+            </a>
+          <?php } else { ?>
+            <a class="btn btn-floating-item btn-help" href="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['help_link']->value ));?>
+" title="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Help','d'=>'Admin.Global'),$_smarty_tpl ) );?>
+">
+              <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Help','d'=>'Admin.Global'),$_smarty_tpl ) );?>
+
+            </a>
+          <?php }?>
+        <?php }?>
+      </div>
+    </div>
+  </div>
   <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayDashboardTop'),$_smarty_tpl ) );?>
 
 </div>
 <?php }
 /* {block 'pageBreadcrumb'} */
-class Block_1743843949617bba42cea862_65852917 extends Smarty_Internal_Block
+class Block_956933118617c9a01533ee1_32145637 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'pageBreadcrumb' => 
   array (
-    0 => 'Block_1743843949617bba42cea862_65852917',
+    0 => 'Block_956933118617c9a01533ee1_32145637',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -160,12 +238,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'pageBreadcrumb'} */
 /* {block 'pageTitle'} */
-class Block_2076554072617bba42ced2f2_71318124 extends Smarty_Internal_Block
+class Block_1796025009617c9a015367a9_75579583 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'pageTitle' => 
   array (
-    0 => 'Block_2076554072617bba42ced2f2_71318124',
+    0 => 'Block_1796025009617c9a015367a9_75579583',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -183,12 +261,12 @@ echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escap
 }
 /* {/block 'pageTitle'} */
 /* {block 'toolbarBox'} */
-class Block_532975808617bba42ceed97_92281965 extends Smarty_Internal_Block
+class Block_220242999617c9a015381d1_54036520 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'toolbarBox' => 
   array (
-    0 => 'Block_532975808617bba42ceed97_92281965',
+    0 => 'Block_220242999617c9a015381d1_54036520',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -206,7 +284,11 @@ $_smarty_tpl->tpl_vars['btn']->do_else = false;
 ?>
               <?php if ($_smarty_tpl->tpl_vars['k']->value != 'back' && $_smarty_tpl->tpl_vars['k']->value != 'modules-list') {?>
                                 <a
-                  class="btn btn-primary <?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['target'])) && $_smarty_tpl->tpl_vars['btn']->value['target']) {?> _blank<?php }?> pointer"<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['href']))) {?>
+                  class="btn <?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['class'])) && $_smarty_tpl->tpl_vars['btn']->value['class']) {
+echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['btn']->value['class'] ));
+} else { ?>btn-primary<?php }
+if ((isset($_smarty_tpl->tpl_vars['btn']->value['target'])) && $_smarty_tpl->tpl_vars['btn']->value['target']) {?> _blank<?php }
+if ((isset($_smarty_tpl->tpl_vars['btn']->value['disabled'])) && $_smarty_tpl->tpl_vars['btn']->value['disabled']) {?> disabled auto-pointer-events<?php }?> pointer"<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['href']))) {?>
                   id="page-header-desc-<?php echo $_smarty_tpl->tpl_vars['table']->value;?>
 -<?php if ((isset($_smarty_tpl->tpl_vars['btn']->value['imgclass']))) {
 echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['btn']->value['imgclass'] ));
@@ -274,7 +356,7 @@ echo $_smarty_tpl->tpl_vars['toolbar_btn']->value['modules-list']['imgclass'];
 
                 </a>
               <?php } else { ?>
-                <a class="btn btn-outline-secondary" href="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['help_link']->value ));?>
+                <a class="btn btn-outline-secondary btn-help" href="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['help_link']->value ));?>
 " title="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Help','d'=>'Admin.Global'),$_smarty_tpl ) );?>
 ">
                   <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Help','d'=>'Admin.Global'),$_smarty_tpl ) );?>
@@ -284,6 +366,7 @@ echo $_smarty_tpl->tpl_vars['toolbar_btn']->value['modules-list']['imgclass'];
             <?php }?>
           </div>
         </div>
+
       <?php
 }
 }

@@ -203,17 +203,41 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_administration:
 
-                    // admin_administration_save
-                    if ('/configure/advanced/administration/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\AdministrationController::processFormAction',  '_legacy_controller' => 'AdminAdminPreferences',  '_legacy_link' => 'AdminAdminPreferences:update',  '_route' => 'admin_administration_save',);
+                    // admin_administration_general_save
+                    if ('/configure/advanced/administration/general' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\AdministrationController::processGeneralFormAction',  '_legacy_controller' => 'AdminAdminPreferences',  '_legacy_link' => 'AdminAdminPreferences:update',  '_route' => 'admin_administration_general_save',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
-                            goto not_admin_administration_save;
+                            goto not_admin_administration_general_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_administration_save:
+                    not_admin_administration_general_save:
+
+                    // admin_administration_upload_quota_save
+                    if ('/configure/advanced/administration/upload-quota' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\AdministrationController::processUploadQuotaFormAction',  '_legacy_controller' => 'AdminAdminPreferences',  '_route' => 'admin_administration_upload_quota_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_administration_upload_quota_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_administration_upload_quota_save:
+
+                    // admin_administration_notifications_save
+                    if ('/configure/advanced/administration/notifications' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\AdministrationController::processNotificationsFormAction',  '_legacy_controller' => 'AdminAdminPreferences',  '_route' => 'admin_administration_notifications_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_administration_notifications_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_administration_notifications_save:
 
                 }
 
@@ -402,29 +426,92 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_performance:
 
-                    // admin_performance_save
-                    if ('/configure/advanced/performance/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_save',);
+                    // admin_performance_smarty_save
+                    if ('/configure/advanced/performance/smarty' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processSmartyFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_smarty_save',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
-                            goto not_admin_performance_save;
+                            goto not_admin_performance_smarty_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_performance_save:
+                    not_admin_performance_smarty_save:
 
-                    // admin_clear_cache
-                    if ('/configure/advanced/performance/clear-cache' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::clearCacheAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:empty_smarty_cache',  '_route' => 'admin_clear_cache',);
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_clear_cache;
+                    // admin_performance_debug_mode_save
+                    if ('/configure/advanced/performance/debug-mode' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processDebugModeFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_debug_mode_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_performance_debug_mode_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_clear_cache:
+                    not_admin_performance_debug_mode_save:
+
+                    // admin_performance_optional_features_save
+                    if ('/configure/advanced/performance/optional-features' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processOptionalFeaturesFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_optional_features_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_performance_optional_features_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_performance_optional_features_save:
+
+                    if (0 === strpos($pathinfo, '/configure/advanced/performance/c')) {
+                        // admin_performance_combine_compress_cache_save
+                        if ('/configure/advanced/performance/combine-compress-cache' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processCombineCompressCacheFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_combine_compress_cache_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_performance_combine_compress_cache_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_performance_combine_compress_cache_save:
+
+                        // admin_performance_caching_save
+                        if ('/configure/advanced/performance/caching' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processCachingFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_caching_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_performance_caching_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_performance_caching_save:
+
+                        // admin_clear_cache
+                        if ('/configure/advanced/performance/clear-cache' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::clearCacheAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:empty_smarty_cache',  '_route' => 'admin_clear_cache',);
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_clear_cache;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_clear_cache:
+
+                    }
+
+                    // admin_performance_media_servers_save
+                    if ('/configure/advanced/performance/media-servers' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\PerformanceController::processMediaServersFormAction',  '_legacy_controller' => 'AdminPerformance',  '_legacy_link' => 'AdminPerformance:update',  '_route' => 'admin_performance_media_servers_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_performance_media_servers_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_performance_media_servers_save:
 
                     if (0 === strpos($pathinfo, '/configure/advanced/performance/memcache/servers')) {
                         // admin_servers
@@ -562,169 +649,184 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                 }
 
-                elseif (0 === strpos($pathinfo, '/configure/advanced/system-information')) {
-                    // admin_system_information
-                    if ('/configure/advanced/system-information' === $trimmedPathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SystemInformationController::indexAction',  '_legacy_controller' => 'AdminInformation',  '_legacy_link' => 'AdminInformation',  '_route' => 'admin_system_information',);
-                        if ('/' === substr($pathinfo, -1)) {
-                            // no-op
-                        } elseif ('GET' !== $canonicalMethod) {
-                            goto not_admin_system_information;
-                        } else {
-                            return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_system_information'));
-                        }
+                elseif (0 === strpos($pathinfo, '/configure/advanced/s')) {
+                    if (0 === strpos($pathinfo, '/configure/advanced/system-information')) {
+                        // admin_system_information
+                        if ('/configure/advanced/system-information' === $trimmedPathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SystemInformationController::indexAction',  '_legacy_controller' => 'AdminInformation',  '_legacy_link' => 'AdminInformation',  '_route' => 'admin_system_information',);
+                            if ('/' === substr($pathinfo, -1)) {
+                                // no-op
+                            } elseif ('GET' !== $canonicalMethod) {
+                                goto not_admin_system_information;
+                            } else {
+                                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_system_information'));
+                            }
 
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_system_information;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_system_information:
+
+                        // admin_system_information_check_files
+                        if ('/configure/advanced/system-information/files' === $pathinfo && $request->isXmlHttpRequest()) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SystemInformationController::displayCheckFilesAction',  '_legacy_controller' => 'AdminInformation',  '_legacy_link' => 'AdminInformation:checkFiles',  '_route' => 'admin_system_information_check_files',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_system_information_check_files;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_system_information_check_files:
+
+                    }
+
+                    // admin_shops_search
+                    if (0 === strpos($pathinfo, '/configure/advanced/shops/search') && preg_match('#^/configure/advanced/shops/search/(?P<searchTerm>[^/]++)$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_shops_search']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\ShopController::searchAction',));
                         if (!in_array($canonicalMethod, ['GET'])) {
                             $allow = array_merge($allow, ['GET']);
-                            goto not_admin_system_information;
+                            goto not_admin_shops_search;
                         }
 
                         return $ret;
                     }
-                    not_admin_system_information:
+                    not_admin_shops_search:
 
-                    // admin_system_information_check_files
-                    if ('/configure/advanced/system-information/files' === $pathinfo && $request->isXmlHttpRequest()) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SystemInformationController::displayCheckFilesAction',  '_legacy_controller' => 'AdminInformation',  '_legacy_link' => 'AdminInformation:checkFiles',  '_route' => 'admin_system_information_check_files',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
-                            goto not_admin_system_information_check_files;
+                    if (0 === strpos($pathinfo, '/configure/advanced/sql-requests')) {
+                        // admin_sql_requests_index
+                        if ('/configure/advanced/sql-requests' === $trimmedPathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::indexAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql',  '_route' => 'admin_sql_requests_index',);
+                            if ('/' === substr($pathinfo, -1)) {
+                                // no-op
+                            } elseif ('GET' !== $canonicalMethod) {
+                                goto not_admin_sql_requests_index;
+                            } else {
+                                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_sql_requests_index'));
+                            }
+
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_sql_requests_index;
+                            }
+
+                            return $ret;
                         }
+                        not_admin_sql_requests_index:
 
-                        return $ret;
+                        // admin_sql_requests_search
+                        if ('/configure/advanced/sql-requests/' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.request_sql',  'redirectRoute' => 'admin_sql_requests_index',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:search',  '_route' => 'admin_sql_requests_search',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_sql_requests_search;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_search:
+
+                        // admin_sql_requests_process_settings
+                        if ('/configure/advanced/sql-requests/process-settings' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::processFormAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:update',  '_route' => 'admin_sql_requests_process_settings',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_sql_requests_process_settings;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_process_settings:
+
+                        // admin_sql_requests_create
+                        if ('/configure/advanced/sql-requests/new' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::createAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:addrequest_sql',  '_route' => 'admin_sql_requests_create',);
+                            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                $allow = array_merge($allow, ['GET', 'POST']);
+                                goto not_admin_sql_requests_create;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_create:
+
+                        // admin_sql_requests_edit
+                        if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/edit$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::editAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:updaterequest_sql',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
+                            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                $allow = array_merge($allow, ['GET', 'POST']);
+                                goto not_admin_sql_requests_edit;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_edit:
+
+                        // admin_sql_requests_delete
+                        if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/delete$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::deleteAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:deleterequest_sql',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
+                            if (!in_array($canonicalMethod, ['GET', 'DELETE'])) {
+                                $allow = array_merge($allow, ['GET', 'DELETE']);
+                                goto not_admin_sql_requests_delete;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_delete:
+
+                        // admin_sql_requests_delete_bulk
+                        if ('/configure/advanced/sql-requests/delete-bulk' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::deleteBulkAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:submitBulkdeleterequest_sql',  '_route' => 'admin_sql_requests_delete_bulk',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_sql_requests_delete_bulk;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_delete_bulk:
+
+                        // admin_sql_requests_table_columns
+                        if (0 === strpos($pathinfo, '/configure/advanced/sql-requests/tables') && preg_match('#^/configure/advanced/sql\\-requests/tables/(?P<mySqlTableName>[^/]++)/columns$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_table_columns']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::ajaxTableColumnsAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:ajax',  '_legacy_parameters' =>   array (    'table' => 'mySqlTableName',  ),));
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_sql_requests_table_columns;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_table_columns:
+
+                        // admin_sql_requests_view
+                        if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/view$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_view']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::viewAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:viewsql_request',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_sql_requests_view;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_view:
+
+                        // admin_sql_requests_export
+                        if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/export$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_export']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::exportAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:exportsql_request',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_sql_requests_export;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_sql_requests_export:
+
                     }
-                    not_admin_system_information_check_files:
-
-                }
-
-                elseif (0 === strpos($pathinfo, '/configure/advanced/sql-requests')) {
-                    // admin_sql_requests_index
-                    if ('/configure/advanced/sql-requests' === $trimmedPathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::indexAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql',  '_route' => 'admin_sql_requests_index',);
-                        if ('/' === substr($pathinfo, -1)) {
-                            // no-op
-                        } elseif ('GET' !== $canonicalMethod) {
-                            goto not_admin_sql_requests_index;
-                        } else {
-                            return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_sql_requests_index'));
-                        }
-
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_sql_requests_index;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_index:
-
-                    // admin_sql_requests_search
-                    if ('/configure/advanced/sql-requests/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::searchAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:search',  '_route' => 'admin_sql_requests_search',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
-                            goto not_admin_sql_requests_search;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_search:
-
-                    // admin_sql_requests_process_settings
-                    if ('/configure/advanced/sql-requests/process-settings' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::processFormAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:update',  '_route' => 'admin_sql_requests_process_settings',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
-                            goto not_admin_sql_requests_process_settings;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_process_settings:
-
-                    // admin_sql_requests_create
-                    if ('/configure/advanced/sql-requests/new' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::createAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:addrequest_sql',  '_route' => 'admin_sql_requests_create',);
-                        if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                            $allow = array_merge($allow, ['GET', 'POST']);
-                            goto not_admin_sql_requests_create;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_create:
-
-                    // admin_sql_requests_edit
-                    if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/edit$#sD', $pathinfo, $matches)) {
-                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::editAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:updaterequest_sql',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
-                        if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                            $allow = array_merge($allow, ['GET', 'POST']);
-                            goto not_admin_sql_requests_edit;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_edit:
-
-                    // admin_sql_requests_delete
-                    if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/delete$#sD', $pathinfo, $matches)) {
-                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::deleteAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:deleterequest_sql',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_sql_requests_delete;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_delete:
-
-                    // admin_sql_requests_delete_bulk
-                    if ('/configure/advanced/sql-requests/delete-bulk' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::deleteBulkAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:submitBulkdeleterequest_sql',  '_route' => 'admin_sql_requests_delete_bulk',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
-                            goto not_admin_sql_requests_delete_bulk;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_delete_bulk:
-
-                    // admin_sql_requests_table_columns
-                    if (0 === strpos($pathinfo, '/configure/advanced/sql-requests/tables') && preg_match('#^/configure/advanced/sql\\-requests/tables/(?P<mySqlTableName>[^/]++)/columns$#sD', $pathinfo, $matches)) {
-                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_table_columns']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::ajaxTableColumnsAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:ajax',  '_legacy_parameters' =>   array (    'table' => 'mySqlTableName',  ),));
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_sql_requests_table_columns;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_table_columns:
-
-                    // admin_sql_requests_view
-                    if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/view$#sD', $pathinfo, $matches)) {
-                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_view']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::viewAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:viewsql_request',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_sql_requests_view;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_view:
-
-                    // admin_sql_requests_export
-                    if (preg_match('#^/configure/advanced/sql\\-requests/(?P<sqlRequestId>\\d+)/export$#sD', $pathinfo, $matches)) {
-                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_sql_requests_export']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\SqlManagerController::exportAction',  '_legacy_controller' => 'AdminRequestSql',  '_legacy_link' => 'AdminRequestSql:exportsql_request',  '_legacy_parameters' =>   array (    'id_request_sql' => 'sqlRequestId',  ),));
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_sql_requests_export;
-                        }
-
-                        return $ret;
-                    }
-                    not_admin_sql_requests_export:
 
                 }
 
@@ -761,17 +863,32 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_emails_search:
 
-                    // admin_emails_save_options
-                    if ('/configure/advanced/emails/options' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\EmailController::saveOptionsAction',  '_legacy_controller' => 'AdminEmails',  '_legacy_link' => 'AdminEmails:update',  '_route' => 'admin_emails_save_options',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
-                            goto not_admin_emails_save_options;
-                        }
+                    if (0 === strpos($pathinfo, '/configure/advanced/emails/options')) {
+                        // admin_emails_save_options_get
+                        if ('/configure/advanced/emails/options' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\EmailController::indexAction',  '_legacy_controller' => 'AdminEmails',  '_legacy_link' => 'AdminEmails:update',  '_route' => 'admin_emails_save_options_get',);
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_emails_save_options_get;
+                            }
 
-                        return $ret;
+                            return $ret;
+                        }
+                        not_admin_emails_save_options_get:
+
+                        // admin_emails_save_options
+                        if ('/configure/advanced/emails/options' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\EmailController::saveOptionsAction',  '_legacy_controller' => 'AdminEmails',  '_legacy_link' => 'AdminEmails:update',  '_route' => 'admin_emails_save_options',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_emails_save_options;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_emails_save_options:
+
                     }
-                    not_admin_emails_save_options:
 
                     // admin_emails_send_test
                     if ('/configure/advanced/emails/send-testing-email' === $pathinfo && $request->isXmlHttpRequest()) {
@@ -813,8 +930,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         // admin_emails_delete
                         if (preg_match('#^/configure/advanced/emails/delete/(?P<mailId>\\d+)$#sD', $pathinfo, $matches)) {
                             $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_emails_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\EmailController::deleteAction',  '_legacy_controller' => 'AdminEmails',  '_legacy_link' => 'AdminEmails:deletemail',  '_legacy_parameters' =>   array (    'id_mail' => 'mailId',  ),));
-                            if (!in_array($canonicalMethod, ['GET'])) {
-                                $allow = array_merge($allow, ['GET']);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
                                 goto not_admin_emails_delete;
                             }
 
@@ -1016,7 +1133,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                     // admin_webservice_keys_search
                     if ('/configure/advanced/webservice-keys/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\WebserviceController::searchAction',  '_legacy_controller' => 'AdminWebservice',  '_legacy_link' => 'AdminWebservice:submitFilterwebservice_account',  '_route' => 'admin_webservice_keys_search',);
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.webservice_key',  'redirectRoute' => 'admin_webservice_keys_index',  '_legacy_controller' => 'AdminWebservice',  '_legacy_link' => 'AdminWebservice:submitFilterwebservice_account',  '_route' => 'admin_webservice_keys_search',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
                             goto not_admin_webservice_keys_search;
@@ -1065,8 +1182,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     // admin_webservice_keys_delete
                     if (preg_match('#^/configure/advanced/webservice\\-keys/(?P<webserviceKeyId>\\d+)/delete$#sD', $pathinfo, $matches)) {
                         $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_webservice_keys_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\WebserviceController::deleteAction',  '_legacy_controller' => 'AdminWebservice',  '_legacy_link' => 'AdminWebservice:deletewebservice_account',  '_legacy_parameters' =>   array (    'id_webservice_account' => 'webserviceKeyId',  ),));
-                        if (!in_array($requestMethod, ['DELETE'])) {
-                            $allow = array_merge($allow, ['DELETE']);
+                        if (!in_array($requestMethod, ['DELETE', 'POST'])) {
+                            $allow = array_merge($allow, ['DELETE', 'POST']);
                             goto not_admin_webservice_keys_delete;
                         }
 
@@ -1196,8 +1313,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     // admin_backups_delete
                     if (preg_match('#^/configure/advanced/backups/(?P<deleteFileName>[^/]++)$#sD', $pathinfo, $matches)) {
                         $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_backups_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\BackupController::deleteAction',  '_legacy_controller' => 'AdminBackup',  '_legacy_link' => 'AdminBackup:delete',  '_legacy_parameters' =>   array (    'filename' => 'deleteFileName',  ),));
-                        if (!in_array($requestMethod, ['DELETE'])) {
-                            $allow = array_merge($allow, ['DELETE']);
+                        if (!in_array($requestMethod, ['DELETE', 'POST'])) {
+                            $allow = array_merge($allow, ['DELETE', 'POST']);
                             goto not_admin_backups_delete;
                         }
 
@@ -1218,6 +1335,26 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     not_admin_backups_bulk_delete:
 
                 }
+
+                // admin_feature_flags_index
+                if ('/configure/advanced/feature-flags' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\AdvancedParameters\\FeatureFlagController::indexAction',  '_legacy_controller' => 'AdminFeatureFlag',  '_legacy_link' => 'AdminFeatureFlag',  '_route' => 'admin_feature_flags_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_admin_feature_flags_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_feature_flags_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_admin_feature_flags_index;
+                    }
+
+                    return $ret;
+                }
+                not_admin_feature_flags_index:
 
             }
 
@@ -1270,52 +1407,225 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_product_preferences:
 
-                    // admin_product_preferences_process
-                    if ('/configure/shop/product-preferences/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\ProductPreferencesController::processAction',  '_legacy_controller' => 'AdminPPreferences',  '_legacy_link' => 'AdminPPreferences:update',  '_route' => 'admin_product_preferences_process',);
+                    // admin_product_preferences_general_save
+                    if ('/configure/shop/product-preferences/general' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\ProductPreferencesController::processGeneralFormAction',  '_legacy_controller' => 'AdminPPreferences',  '_legacy_link' => 'AdminPPreferences:update',  '_route' => 'admin_product_preferences_general_save',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
-                            goto not_admin_product_preferences_process;
+                            goto not_admin_product_preferences_general_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_product_preferences_process:
+                    not_admin_product_preferences_general_save:
+
+                    // admin_product_preferences_pagination_save
+                    if ('/configure/shop/product-preferences/pagination' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\ProductPreferencesController::processPaginationFormAction',  '_legacy_controller' => 'AdminPPreferences',  '_legacy_link' => 'AdminPPreferences:update',  '_route' => 'admin_product_preferences_pagination_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_product_preferences_pagination_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_product_preferences_pagination_save:
+
+                    // admin_product_preferences_page_save
+                    if ('/configure/shop/product-preferences/page' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\ProductPreferencesController::processPageFormAction',  '_legacy_controller' => 'AdminPPreferences',  '_legacy_link' => 'AdminPPreferences:update',  '_route' => 'admin_product_preferences_page_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_product_preferences_page_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_product_preferences_page_save:
+
+                    // admin_product_preferences_stock_save
+                    if ('/configure/shop/product-preferences/stock' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\ProductPreferencesController::processStockFormAction',  '_legacy_controller' => 'AdminPPreferences',  '_legacy_link' => 'AdminPPreferences:update',  '_route' => 'admin_product_preferences_stock_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_product_preferences_stock_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_product_preferences_stock_save:
 
                 }
 
-                elseif (0 === strpos($pathinfo, '/configure/shop/order-preferences')) {
-                    // admin_order_preferences
-                    if ('/configure/shop/order-preferences' === $trimmedPathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderPreferencesController::indexAction',  '_legacy_controller' => 'AdminOrderPreferences',  '_legacy_link' => 'AdminOrderPreferences',  '_route' => 'admin_order_preferences',);
-                        if ('/' === substr($pathinfo, -1)) {
-                            // no-op
-                        } elseif ('GET' !== $canonicalMethod) {
-                            goto not_admin_order_preferences;
-                        } else {
-                            return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_order_preferences'));
-                        }
+                elseif (0 === strpos($pathinfo, '/configure/shop/order-')) {
+                    if (0 === strpos($pathinfo, '/configure/shop/order-preferences')) {
+                        // admin_order_preferences
+                        if ('/configure/shop/order-preferences' === $trimmedPathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderPreferencesController::indexAction',  '_legacy_controller' => 'AdminOrderPreferences',  '_legacy_link' => 'AdminOrderPreferences',  '_route' => 'admin_order_preferences',);
+                            if ('/' === substr($pathinfo, -1)) {
+                                // no-op
+                            } elseif ('GET' !== $canonicalMethod) {
+                                goto not_admin_order_preferences;
+                            } else {
+                                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_order_preferences'));
+                            }
 
-                        if (!in_array($canonicalMethod, ['GET'])) {
-                            $allow = array_merge($allow, ['GET']);
-                            goto not_admin_order_preferences;
-                        }
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_order_preferences;
+                            }
 
-                        return $ret;
+                            return $ret;
+                        }
+                        not_admin_order_preferences:
+
+                        // admin_order_preferences_general_save
+                        if ('/configure/shop/order-preferences/general' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderPreferencesController::processGeneralFormAction',  '_legacy_controller' => 'AdminOrderPreferences',  '_legacy_link' => 'AdminOrderPreferences:update',  '_route' => 'admin_order_preferences_general_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_order_preferences_general_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_preferences_general_save:
+
+                        // admin_order_preferences_gift_options_save
+                        if ('/configure/shop/order-preferences/gift-options' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderPreferencesController::processGiftOptionsFormAction',  '_legacy_controller' => 'AdminOrderPreferences',  '_route' => 'admin_order_preferences_gift_options_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_order_preferences_gift_options_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_preferences_gift_options_save:
+
                     }
-                    not_admin_order_preferences:
 
-                    // admin_order_preferences_save
-                    if ('/configure/shop/order-preferences/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderPreferencesController::processAction',  '_legacy_controller' => 'AdminOrderPreferences',  '_legacy_link' => 'AdminOrderPreferences:update',  '_route' => 'admin_order_preferences_save',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
-                            goto not_admin_order_preferences_save;
+                    elseif (0 === strpos($pathinfo, '/configure/shop/order-states')) {
+                        // admin_order_states
+                        if ('/configure/shop/order-states' === $trimmedPathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::indexAction',  '_legacy_controller' => 'AdminStatuses',  '_route' => 'admin_order_states',);
+                            if ('/' === substr($pathinfo, -1)) {
+                                // no-op
+                            } elseif ('GET' !== $canonicalMethod) {
+                                goto not_admin_order_states;
+                            } else {
+                                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_order_states'));
+                            }
+
+                            if (!in_array($canonicalMethod, ['GET'])) {
+                                $allow = array_merge($allow, ['GET']);
+                                goto not_admin_order_states;
+                            }
+
+                            return $ret;
                         }
+                        not_admin_order_states:
 
-                        return $ret;
+                        // admin_order_states_filter
+                        if ('/configure/shop/order-states/' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::searchGridAction',  '_legacy_controller' => 'AdminStatuses',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.order_states',  'redirectRoute' => 'admin_order_states',  '_route' => 'admin_order_states_filter',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_order_states_filter;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_states_filter:
+
+                        // admin_order_states_create
+                        if ('/configure/shop/order-states/new' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::createAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:addorderstate',  '_route' => 'admin_order_states_create',);
+                            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                $allow = array_merge($allow, ['GET', 'POST']);
+                                goto not_admin_order_states_create;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_states_create:
+
+                        // admin_order_states_edit
+                        if (preg_match('#^/configure/shop/order\\-states/(?P<orderStateId>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_order_states_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::editAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:updateorderstate',  '_legacy_parameters' =>   array (    'id_order_state' => 'orderStateId',  ),));
+                            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                $allow = array_merge($allow, ['GET', 'POST']);
+                                goto not_admin_order_states_edit;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_states_edit:
+
+                        // admin_order_states_toggle_delivery
+                        if (preg_match('#^/configure/shop/order\\-states/(?P<orderStateId>\\d+)/toggle\\-delivery$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_order_states_toggle_delivery']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::toggleDeliveryAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:deliveryorderstate',  '_legacy_parameters' =>   array (    'id_order_state' => 'orderStateId',  ),));
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_order_states_toggle_delivery;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_states_toggle_delivery:
+
+                        // admin_order_states_toggle_invoice
+                        if (preg_match('#^/configure/shop/order\\-states/(?P<orderStateId>\\d+)/toggle\\-invoice$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_order_states_toggle_invoice']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::toggleInvoiceAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:invoiceorderstate',  '_legacy_parameters' =>   array (    'id_order_state' => 'orderStateId',  ),));
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_order_states_toggle_invoice;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_states_toggle_invoice:
+
+                        // admin_order_states_toggle_send_email
+                        if (preg_match('#^/configure/shop/order\\-states/(?P<orderStateId>\\d+)/toggle\\-send\\-email$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_order_states_toggle_send_email']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::toggleSendEmailAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:sendemailorderstate',  '_legacy_parameters' =>   array (    'id_order_state' => 'orderStateId',  ),));
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_order_states_toggle_send_email;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_states_toggle_send_email:
+
                     }
-                    not_admin_order_preferences_save:
+
+                    elseif (0 === strpos($pathinfo, '/configure/shop/order-return-states')) {
+                        // admin_order_return_states_create
+                        if ('/configure/shop/order-return-states/new' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::createOrderReturnStateAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:addorderreturnstate',  '_route' => 'admin_order_return_states_create',);
+                            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                $allow = array_merge($allow, ['GET', 'POST']);
+                                goto not_admin_order_return_states_create;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_return_states_create:
+
+                        // admin_order_return_states_edit
+                        if (preg_match('#^/configure/shop/order\\-return\\-states/(?P<orderReturnStateId>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                            $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_order_return_states_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\OrderStateController::editOrderReturnStateAction',  '_legacy_controller' => 'AdminStatuses',  '_legacy_link' => 'AdminStatuses:updateorderreturnstate',  '_legacy_parameters' =>   array (    'id_order_return_state' => 'orderReturnStateId',  ),));
+                            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                $allow = array_merge($allow, ['GET', 'POST']);
+                                goto not_admin_order_return_states_edit;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_order_return_states_edit:
+
+                    }
 
                 }
 
@@ -1461,8 +1771,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     // admin_maintenance_save
                     if ('/configure/shop/maintenance/' === $pathinfo) {
                         $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MaintenanceController::processFormAction',  '_legacy_controller' => 'AdminMaintenance',  '_legacy_link' => 'AdminMaintenance:update',  '_route' => 'admin_maintenance_save',);
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
+                        if (!in_array($requestMethod, ['PATCH', 'POST'])) {
+                            $allow = array_merge($allow, ['PATCH', 'POST']);
                             goto not_admin_maintenance_save;
                         }
 
@@ -1495,7 +1805,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                     // admin_metas_search
                     if ('/configure/shop/seo-urls/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MetaController::searchAction',  '_legacy_controller' => 'AdminMeta',  '_legacy_link' => 'AdminMeta:submitFiltermeta',  '_route' => 'admin_metas_search',);
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.meta',  'redirectRoute' => 'admin_metas_index',  '_legacy_controller' => 'AdminMeta',  '_legacy_link' => 'AdminMeta:submitFiltermeta',  '_route' => 'admin_metas_search',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
                             goto not_admin_metas_search;
@@ -1553,17 +1863,56 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_metas_delete_bulk:
 
-                    // admin_metas_save_options
-                    if ('/configure/shop/seo-urls/options' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MetaController::saveOptionsAction',  '_legacy_controller' => 'AdminMeta',  '_legacy_link' => 'AdminMeta:submitOptionsmeta',  '_route' => 'admin_metas_save_options',);
+                    if (0 === strpos($pathinfo, '/configure/shop/seo-urls/s')) {
+                        // admin_metas_set_up_urls_save
+                        if ('/configure/shop/seo-urls/set-up-urls' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MetaController::processSetUpUrlsFormAction',  '_legacy_controller' => 'AdminMeta',  '_legacy_link' => 'AdminMeta:submitOptionsmeta',  '_route' => 'admin_metas_set_up_urls_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_metas_set_up_urls_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_metas_set_up_urls_save:
+
+                        // admin_metas_seo_options_save
+                        if ('/configure/shop/seo-urls/seo-options' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MetaController::processSeoOptionsFormAction',  '_legacy_controller' => 'AdminMeta',  '_route' => 'admin_metas_seo_options_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_metas_seo_options_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_metas_seo_options_save:
+
+                        // admin_metas_shop_urls_save
+                        if ('/configure/shop/seo-urls/shop-urls' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MetaController::processShopUrlsFormAction',  '_legacy_controller' => 'AdminMeta',  '_route' => 'admin_metas_shop_urls_save',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_metas_shop_urls_save;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_metas_shop_urls_save:
+
+                    }
+
+                    // admin_metas_url_schema_save
+                    if ('/configure/shop/seo-urls/url-schema' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Configure\\ShopParameters\\MetaController::processUrlSchemaFormAction',  '_legacy_controller' => 'AdminMeta',  '_route' => 'admin_metas_url_schema_save',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
-                            goto not_admin_metas_save_options;
+                            goto not_admin_metas_url_schema_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_metas_save_options:
+                    not_admin_metas_url_schema_save:
 
                     // admin_metas_generate_robots_text_file
                     if ('/configure/shop/seo-urls/generate/robots' === $pathinfo) {
@@ -2037,6 +2386,195 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         }
                         not_admin_product_export_action:
 
+                        if (0 === strpos($pathinfo, '/sell/catalog/products-v2')) {
+                            // admin_products_combinations
+                            if (preg_match('#^/sell/catalog/products\\-v2/(?P<productId>[^/]++)/combinations$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_combinations']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::getListAction',  '_legacy_controller' => 'AdminProducts',));
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_products_combinations;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_combinations:
+
+                            // admin_products_combinations_ids
+                            if (preg_match('#^/sell/catalog/products\\-v2/(?P<productId>[^/]++)/combinations/ids$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_combinations_ids']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::getListIdsAction',  '_legacy_controller' => 'AdminProducts',));
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_products_combinations_ids;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_combinations_ids:
+
+                            if (0 === strpos($pathinfo, '/sell/catalog/products-v2/combinations')) {
+                                // admin_products_combinations_update_combination_from_listing
+                                if (preg_match('#^/sell/catalog/products\\-v2/combinations/(?P<combinationId>\\d+)/update\\-combination\\-from\\-listing$#sD', $pathinfo, $matches)) {
+                                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_combinations_update_combination_from_listing']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::updateCombinationFromListingAction',  '_legacy_controller' => 'AdminProducts',));
+                                    if (!in_array($requestMethod, ['PATCH'])) {
+                                        $allow = array_merge($allow, ['PATCH']);
+                                        goto not_admin_products_combinations_update_combination_from_listing;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_products_combinations_update_combination_from_listing:
+
+                                // admin_products_combinations_edit_combination
+                                if (preg_match('#^/sell/catalog/products\\-v2/combinations/(?P<combinationId>\\d+)/edit$#sD', $pathinfo, $matches)) {
+                                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_combinations_edit_combination']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::editAction',  '_legacy_controller' => 'AdminProducts',));
+                                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                        $allow = array_merge($allow, ['GET', 'POST']);
+                                        goto not_admin_products_combinations_edit_combination;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_products_combinations_edit_combination:
+
+                                // admin_products_combinations_remove_combination
+                                if (preg_match('#^/sell/catalog/products\\-v2/combinations/(?P<combinationId>\\d+)/remove$#sD', $pathinfo, $matches)) {
+                                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_combinations_remove_combination']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::removeAction',  '_legacy_controller' => 'AdminProducts',));
+                                    if (!in_array($requestMethod, ['DELETE'])) {
+                                        $allow = array_merge($allow, ['DELETE']);
+                                        goto not_admin_products_combinations_remove_combination;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_products_combinations_remove_combination:
+
+                            }
+
+                            // admin_products_attribute_groups
+                            if (preg_match('#^/sell/catalog/products\\-v2/(?P<productId>[^/]++)/attribute\\-groups$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_attribute_groups']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::getAttributeGroupsAction',  '_legacy_controller' => 'AdminProducts',));
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_products_attribute_groups;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_attribute_groups:
+
+                            // admin_all_attribute_groups
+                            if ('/sell/catalog/products-v2/all-attribute-groups' === $pathinfo) {
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::getAllAttributeGroupsAction',  '_legacy_controller' => 'AdminProducts',  '_route' => 'admin_all_attribute_groups',);
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_all_attribute_groups;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_all_attribute_groups:
+
+                            // admin_products_combinations_generate
+                            if (0 === strpos($pathinfo, '/sell/catalog/products-v2/generate-combinations') && preg_match('#^/sell/catalog/products\\-v2/generate\\-combinations/(?P<productId>[^/]++)$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_combinations_generate']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\CombinationController::generateCombinationsAction',  '_legacy_controller' => 'AdminProducts',));
+                                if (!in_array($requestMethod, ['POST'])) {
+                                    $allow = array_merge($allow, ['POST']);
+                                    goto not_admin_products_combinations_generate;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_combinations_generate:
+
+                            // admin_products_v2_get_images
+                            if (preg_match('#^/sell/catalog/products\\-v2/(?P<productId>\\d+)/images$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_v2_get_images']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ImageController::getImagesAction',  '_legacy_controller' => 'AdminProducts',  '_legacy_link' =>   array (    0 => 'AdminProducts:getimages',  ),  '_legacy_parameters' =>   array (    'id_product' => 'productId',  ),));
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_products_v2_get_images;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_v2_get_images:
+
+                            if (0 === strpos($pathinfo, '/sell/catalog/products-v2/images')) {
+                                // admin_products_v2_add_image
+                                if ('/sell/catalog/products-v2/images/add' === $pathinfo) {
+                                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ImageController::addImageAction',  '_legacy_controller' => 'AdminProducts',  '_legacy_link' =>   array (    0 => 'AdminProducts:addimage',  ),  '_legacy_parameters' =>   array (    'id_product' => 'productId',  ),  '_route' => 'admin_products_v2_add_image',);
+                                    if (!in_array($requestMethod, ['POST'])) {
+                                        $allow = array_merge($allow, ['POST']);
+                                        goto not_admin_products_v2_add_image;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_products_v2_add_image:
+
+                                // admin_products_v2_update_image
+                                if (preg_match('#^/sell/catalog/products\\-v2/images/(?P<productImageId>\\d+)/update$#sD', $pathinfo, $matches)) {
+                                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_v2_update_image']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ImageController::updateImageAction',  '_legacy_controller' => 'AdminProducts',  '_legacy_link' =>   array (    0 => 'AdminProducts:editimage',  ),  '_legacy_parameters' =>   array (    'id_product_image' => 'productImageId',  ),));
+                                    if (!in_array($requestMethod, ['PATCH'])) {
+                                        $allow = array_merge($allow, ['PATCH']);
+                                        goto not_admin_products_v2_update_image;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_products_v2_update_image:
+
+                                // admin_products_v2_delete_image
+                                if (preg_match('#^/sell/catalog/products\\-v2/images/(?P<productImageId>\\d+)/delete$#sD', $pathinfo, $matches)) {
+                                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_v2_delete_image']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ImageController::deleteImageAction',  '_legacy_controller' => 'AdminProducts',  '_legacy_link' =>   array (    0 => 'AdminProducts:deleteimage',  ),  '_legacy_parameters' =>   array (    'id_product_image' => 'productImageId',  ),));
+                                    if (!in_array($requestMethod, ['POST'])) {
+                                        $allow = array_merge($allow, ['POST']);
+                                        goto not_admin_products_v2_delete_image;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_products_v2_delete_image:
+
+                            }
+
+                            // admin_products_v2_create
+                            if ('/sell/catalog/products-v2/create' === $pathinfo) {
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ProductController::createAction',  '_legacy_controller' => 'AdminProducts',  '_legacy_link' =>   array (    0 => 'AdminProducts:addproduct',    1 => 'AdminProducts:add',  ),  '_route' => 'admin_products_v2_create',);
+                                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                                    $allow = array_merge($allow, ['GET', 'POST']);
+                                    goto not_admin_products_v2_create;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_v2_create:
+
+                            // admin_products_v2_edit
+                            if (preg_match('#^/sell/catalog/products\\-v2/(?P<productId>\\d+)/edit$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_v2_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ProductController::editAction',  '_legacy_controller' => 'AdminProducts',  '_legacy_link' =>   array (    0 => 'AdminProducts:updateproduct',    1 => 'AdminProducts:update',  ),  '_legacy_parameters' =>   array (    'id_product' => 'productId',  ),));
+                                if (!in_array($canonicalMethod, ['GET', 'POST', 'PATCH'])) {
+                                    $allow = array_merge($allow, ['GET', 'POST', 'PATCH']);
+                                    goto not_admin_products_v2_edit;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_v2_edit:
+
+                            // admin_products_v2_download_virtual_product_file
+                            if (0 === strpos($pathinfo, '/sell/catalog/products-v2/virtual-product-file') && preg_match('#^/sell/catalog/products\\-v2/virtual\\-product\\-file/(?P<virtualProductFileId>\\d+)$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_products_v2_download_virtual_product_file']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\Product\\ProductController::downloadVirtualFileAction',  '_legacy_controller' => 'AdminProducts',));
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_products_v2_download_virtual_product_file;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_products_v2_download_virtual_product_file:
+
+                        }
+
                     }
 
                     elseif (0 === strpos($pathinfo, '/sell/catalog/ca')) {
@@ -2055,7 +2593,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                             // admin_categories_search
                             if ('/sell/catalog/categories/search' === $pathinfo) {
-                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CategoryController::searchGridAction',  '_legacy_controller' => 'AdminCategories',  '_legacy_link' => 'AdminCategories:submitFiltercategory',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.category',  'redirectRoute' => 'admin_categories_index',  'redirectQueryParamsToKeep' =>   array (    0 => 'categoryId',  ),  '_route' => 'admin_categories_search',);
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  '_legacy_controller' => 'AdminCategories',  '_legacy_link' => 'AdminCategories:submitFiltercategory',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.category',  'redirectRoute' => 'admin_categories_index',  'redirectQueryParamsToKeep' =>   array (    0 => 'categoryId',  ),  '_route' => 'admin_categories_search',);
                                 if (!in_array($requestMethod, ['POST'])) {
                                     $allow = array_merge($allow, ['POST']);
                                     goto not_admin_categories_search;
@@ -2201,7 +2739,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                             not_admin_categories_delete_cover_image:
 
                             // admin_categories_delete_menu_thumbnail
-                            if (preg_match('#^/sell/catalog/categories/(?P<categoryId>\\d+)/menu\\-thumbnails/(?P<menuThumbnailId>0|1|2  menu thumbnails only have 3 fixed ids)/delete$#sD', $pathinfo, $matches)) {
+                            if (preg_match('#^/sell/catalog/categories/(?P<categoryId>\\d+)/menu\\-thumbnails/(?P<menuThumbnailId>0|1|2)/delete$#sD', $pathinfo, $matches)) {
                                 $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_categories_delete_menu_thumbnail']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CategoryController::deleteMenuThumbnailAction',  '_legacy_controller' => 'AdminCategories',  '_legacy_link' => 'AdminCategories:forceDeleteThumb',  '_legacy_parameters' =>   array (    'id_category' => 'categoryId',  ),));
                                 if (!in_array($requestMethod, ['POST'])) {
                                     $allow = array_merge($allow, ['POST']);
@@ -2223,6 +2761,18 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                                 return $ret;
                             }
                             not_admin_categories_update_position:
+
+                            // admin_categories_get_categories_tree
+                            if ('/sell/catalog/categories/tree' === $pathinfo) {
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CategoryController::getCategoriesTreeAction',  '_legacy_controller' => 'AdminCategories',  '_route' => 'admin_categories_get_categories_tree',);
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_categories_get_categories_tree;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_categories_get_categories_tree:
 
                         }
 
@@ -2309,17 +2859,115 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                         }
 
-                        // admin_cart_rules_search
-                        if ('/sell/catalog/cart-rules/search' === $pathinfo) {
-                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::searchAction',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_search',);
-                            if (!in_array($canonicalMethod, ['GET'])) {
-                                $allow = array_merge($allow, ['GET']);
-                                goto not_admin_cart_rules_search;
+                        elseif (0 === strpos($pathinfo, '/sell/catalog/cart-rules')) {
+                            // admin_cart_rules_index
+                            if ('/sell/catalog/cart-rules' === $trimmedPathinfo) {
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::indexAction',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_index',);
+                                if ('/' === substr($pathinfo, -1)) {
+                                    // no-op
+                                } elseif ('GET' !== $canonicalMethod) {
+                                    goto not_admin_cart_rules_index;
+                                } else {
+                                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_cart_rules_index'));
+                                }
+
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_cart_rules_index;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_cart_rules_index:
+
+                            // admin_cart_rules_search
+                            if ('/sell/catalog/cart-rules/search' === $pathinfo) {
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::searchAction',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_search',);
+                                if (!in_array($canonicalMethod, ['GET'])) {
+                                    $allow = array_merge($allow, ['GET']);
+                                    goto not_admin_cart_rules_search;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_cart_rules_search:
+
+                            // admin_cart_rules_search_grid
+                            if ('/sell/catalog/cart-rules/' === $pathinfo) {
+                                $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.cart_rule',  'redirectRoute' => 'admin_cart_rules_index',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_search_grid',);
+                                if (!in_array($requestMethod, ['POST'])) {
+                                    $allow = array_merge($allow, ['POST']);
+                                    goto not_admin_cart_rules_search_grid;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_cart_rules_search_grid:
+
+                            // admin_cart_rule_toggle_status
+                            if (preg_match('#^/sell/catalog/cart\\-rules/(?P<cartRuleId>\\d+)/toggle\\-status$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_cart_rule_toggle_status']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::toggleStatusAction',  '_legacy_controller' => 'AdminCartRules',  '_legacy_parameters' =>   array (    'id_cart_rule' => 'cartRuleId',  ),));
+                                if (!in_array($requestMethod, ['POST'])) {
+                                    $allow = array_merge($allow, ['POST']);
+                                    goto not_admin_cart_rule_toggle_status;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_cart_rule_toggle_status:
+
+                            // admin_cart_rules_delete
+                            if (preg_match('#^/sell/catalog/cart\\-rules/(?P<cartRuleId>\\d+)/delete$#sD', $pathinfo, $matches)) {
+                                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_cart_rules_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::deleteAction',  '_legacy_controller' => 'AdminCartRules',  '_legacy_parameters' =>   array (    'id_cart_rule' => 'cartRuleId',  ),));
+                                if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                                    $allow = array_merge($allow, ['POST', 'DELETE']);
+                                    goto not_admin_cart_rules_delete;
+                                }
+
+                                return $ret;
+                            }
+                            not_admin_cart_rules_delete:
+
+                            if (0 === strpos($pathinfo, '/sell/catalog/cart-rules/bulk-')) {
+                                // admin_cart_rules_bulk_delete
+                                if ('/sell/catalog/cart-rules/bulk-delete' === $pathinfo) {
+                                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::bulkDeleteAction',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_bulk_delete',);
+                                    if (!in_array($requestMethod, ['POST'])) {
+                                        $allow = array_merge($allow, ['POST']);
+                                        goto not_admin_cart_rules_bulk_delete;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_cart_rules_bulk_delete:
+
+                                // admin_cart_rules_bulk_disable_status
+                                if ('/sell/catalog/cart-rules/bulk-disable' === $pathinfo) {
+                                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::bulkDisableAction',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_bulk_disable_status',);
+                                    if (!in_array($requestMethod, ['POST'])) {
+                                        $allow = array_merge($allow, ['POST']);
+                                        goto not_admin_cart_rules_bulk_disable_status;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_cart_rules_bulk_disable_status:
+
+                                // admin_cart_rules_bulk_enable_status
+                                if ('/sell/catalog/cart-rules/bulk-enable' === $pathinfo) {
+                                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\CartRuleController::bulkEnableAction',  '_legacy_controller' => 'AdminCartRules',  '_route' => 'admin_cart_rules_bulk_enable_status',);
+                                    if (!in_array($requestMethod, ['POST'])) {
+                                        $allow = array_merge($allow, ['POST']);
+                                        goto not_admin_cart_rules_bulk_enable_status;
+                                    }
+
+                                    return $ret;
+                                }
+                                not_admin_cart_rules_bulk_enable_status:
+
                             }
 
-                            return $ret;
                         }
-                        not_admin_cart_rules_search:
 
                     }
 
@@ -2541,8 +3189,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         // admin_manufacturers_delete
                         if (preg_match('#^/sell/catalog/brands/(?P<manufacturerId>\\d+)/delete$#sD', $pathinfo, $matches)) {
                             $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_manufacturers_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\ManufacturerController::deleteAction',  '_legacy_controller' => 'AdminManufacturers',  '_legacy_link' => 'AdminManufacturers:deletemanufacturer',  '_legacy_parameters' =>   array (    'id_manufacturer' => 'manufacturerId',  ),));
-                            if (!in_array($requestMethod, ['POST'])) {
-                                $allow = array_merge($allow, ['POST']);
+                            if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                                $allow = array_merge($allow, ['POST', 'DELETE']);
                                 goto not_admin_manufacturers_delete;
                             }
 
@@ -2641,8 +3289,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                             // admin_manufacturer_addresses_delete
                             if (preg_match('#^/sell/catalog/brands/addresses/(?P<addressId>\\d+)/delete$#sD', $pathinfo, $matches)) {
                                 $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_manufacturer_addresses_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\ManufacturerController::deleteAddressAction',  '_legacy_controller' => 'AdminManufacturers',  '_legacy_link' => 'AdminManufacturers:deleteaddress',  '_legacy_parameters' =>   array (    'id_address' => 'addressId',  ),));
-                                if (!in_array($requestMethod, ['POST'])) {
-                                    $allow = array_merge($allow, ['POST']);
+                                if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                                    $allow = array_merge($allow, ['POST', 'DELETE']);
                                     goto not_admin_manufacturer_addresses_delete;
                                 }
 
@@ -2710,6 +3358,18 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                             return $ret;
                         }
                         not_admin_monitorings_search:
+
+                        // admin_monitoring_products_bulk_delete
+                        if ('/sell/catalog/monitoring/delete-bulk' === $pathinfo) {
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\MonitoringController::deleteBulkAction',  '_legacy_controller' => 'AdminTracking',  '_route' => 'admin_monitoring_products_bulk_delete',);
+                            if (!in_array($requestMethod, ['POST'])) {
+                                $allow = array_merge($allow, ['POST']);
+                                goto not_admin_monitoring_products_bulk_delete;
+                            }
+
+                            return $ret;
+                        }
+                        not_admin_monitoring_products_bulk_delete:
 
                     }
 
@@ -2800,8 +3460,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         // admin_attributes_delete
                         if (preg_match('#^/sell/catalog/attribute\\-groups/(?P<attributeGroupId>\\d+)/attributes/(?P<attributeId>[^/]++)/delete$#sD', $pathinfo, $matches)) {
                             $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_attributes_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\AttributeController::deleteAction',  '_legacy_controller' => 'AdminAttributesGroups',  'redirectQueryParamsToKeep' =>   array (    0 => 'attributeGroupId',  ),  '_legacy_parameters' =>   array (    'id_attribute_group' => 'attributeGroupId',    'id_attribute' => 'attributeId',  ),));
-                            if (!in_array($requestMethod, ['POST'])) {
-                                $allow = array_merge($allow, ['POST']);
+                            if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                                $allow = array_merge($allow, ['POST', 'DELETE']);
                                 goto not_admin_attributes_delete;
                             }
 
@@ -2904,8 +3564,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         // admin_attribute_groups_delete
                         if (preg_match('#^/sell/catalog/attribute\\-groups/(?P<attributeGroupId>\\d+)/delete$#sD', $pathinfo, $matches)) {
                             $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_attribute_groups_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Catalog\\AttributeGroupController::deleteAction',  '_legacy_controller' => 'AdminAttributesGroups',  '_legacy_parameters' =>   array (    'id_attribute_group' => 'attributeGroupId',  ),));
-                            if (!in_array($requestMethod, ['POST'])) {
-                                $allow = array_merge($allow, ['POST']);
+                            if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                                $allow = array_merge($allow, ['POST', 'DELETE']);
                                 goto not_admin_attribute_groups_delete;
                             }
 
@@ -2976,7 +3636,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                     // admin_customers_filter
                     if ('/sell/customers/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Customer\\CustomerController::searchGridAction',  '_legacy_controller' => 'AdminCustomers',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.customer',  'redirectRoute' => 'admin_customers_index',  '_legacy_link' => 'AdminCustomers:submitFiltercustomer',  '_route' => 'admin_customers_filter',);
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  '_legacy_controller' => 'AdminCustomers',  '_legacy_link' => 'AdminCustomers:submitFiltercustomer',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.customer',  'redirectRoute' => 'admin_customers_index',  '_route' => 'admin_customers_filter',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
                             goto not_admin_customers_filter;
@@ -3489,8 +4149,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                 // admin_addresses_delete
                 if (preg_match('#^/sell/addresses/(?P<addressId>\\d+)/delete$#sD', $pathinfo, $matches)) {
                     $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_addresses_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Address\\AddressController::deleteAction',  '_legacy_controller' => 'AdminAddresses',  '_legacy_link' => 'AdminAddresses:deleteaddress',  '_legacy_parameters' =>   array (    'id_address' => 'addressId',  ),));
-                    if (!in_array($requestMethod, ['POST'])) {
-                        $allow = array_merge($allow, ['POST']);
+                    if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                        $allow = array_merge($allow, ['POST', 'DELETE']);
                         goto not_admin_addresses_delete;
                     }
 
@@ -3607,6 +4267,41 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
             }
 
+            elseif (0 === strpos($pathinfo, '/sell/outstanding')) {
+                // admin_outstanding_index
+                if ('/sell/outstanding' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Customer\\OutstandingController::indexAction',  '_legacy_controller' => 'AdminOutstanding',  '_legacy_link' => 'AdminOutstanding',  '_route' => 'admin_outstanding_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_admin_outstanding_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_outstanding_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_admin_outstanding_index;
+                    }
+
+                    return $ret;
+                }
+                not_admin_outstanding_index:
+
+                // admin_outstanding_search
+                if ('/sell/outstanding/' === $pathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Customer\\OutstandingController::searchAction',  '_legacy_controller' => 'AdminOutstanding',  '_legacy_link' => 'AdminOutstanding:submitFilterorder_invoice',  '_route' => 'admin_outstanding_search',);
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_outstanding_search;
+                    }
+
+                    return $ret;
+                }
+                not_admin_outstanding_search:
+
+            }
+
             elseif (0 === strpos($pathinfo, '/sell/orders')) {
                 if (0 === strpos($pathinfo, '/sell/orders/delivery-slips')) {
                     // admin_order_delivery_slip
@@ -3699,6 +4394,18 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         return $ret;
                     }
                     not_admin_order_invoices_generate_by_status:
+
+                    // admin_order_invoices_generate_by_id
+                    if (preg_match('#^/sell/orders/invoices/(?P<invoiceId>\\d+)/generate$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_order_invoices_generate_by_id']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Order\\InvoicesController::generatePdfByIdAction',  '_legacy_controller' => 'AdminInvoices',));
+                        if (!in_array($canonicalMethod, ['GET'])) {
+                            $allow = array_merge($allow, ['GET']);
+                            goto not_admin_order_invoices_generate_by_id;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_order_invoices_generate_by_id:
 
                 }
 
@@ -4385,6 +5092,18 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                 }
                 not_admin_orders_products_search:
 
+                // admin_orders_set_internal_note
+                if (preg_match('#^/sell/orders/(?P<orderId>\\d+)/set\\-internal\\-note$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_orders_set_internal_note']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Order\\OrderController::setInternalNoteAction',  '_legacy_controller' => 'AdminOrders',  '_legacy_link' => 'AdminOrders:updateInternalNote',  '_legacy_parameters' =>   array (    'id_order' => 'orderId',  ),));
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_orders_set_internal_note;
+                    }
+
+                    return $ret;
+                }
+                not_admin_orders_set_internal_note:
+
                 if (0 === strpos($pathinfo, '/sell/orders/credit-slips')) {
                     // admin_credit_slips_index
                     if ('/sell/orders/credit-slips' === $trimmedPathinfo) {
@@ -4408,7 +5127,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                     // admin_credit_slips_search
                     if ('/sell/orders/credit-slips/search' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Sell\\Order\\CreditSlipController::searchAction',  '_legacy_controller' => 'AdminSlip',  '_legacy_link' => 'AdminSlip:submitFilterorder_slip',  '_route' => 'admin_credit_slips_search',);
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  '_legacy_controller' => 'AdminSlip',  '_legacy_link' => 'AdminSlip:submitFilterorder_slip',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.credit_slip',  'redirectRoute' => 'admin_credit_slips_index',  '_route' => 'admin_credit_slips_search',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
                             goto not_admin_credit_slips_search;
@@ -4519,17 +5238,17 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         }
                         not_admin_international_translation_overview:
 
-                        // admin_international_translations_export_theme
+                        // admin_international_translations_export_catalogues
                         if ('/improve/international/translations/export' === $pathinfo) {
-                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\TranslationsController::exportThemeLanguageAction',  '_legacy_controller' => 'AdminTranslations',  '_legacy_link' => 'AdminTranslations:submitExport',  '_route' => 'admin_international_translations_export_theme',);
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\TranslationsController::exportCataloguesAction',  '_legacy_controller' => 'AdminTranslations',  '_legacy_link' => 'AdminTranslations:submitExport',  '_route' => 'admin_international_translations_export_catalogues',);
                             if (!in_array($requestMethod, ['POST'])) {
                                 $allow = array_merge($allow, ['POST']);
-                                goto not_admin_international_translations_export_theme;
+                                goto not_admin_international_translations_export_catalogues;
                             }
 
                             return $ret;
                         }
-                        not_admin_international_translations_export_theme:
+                        not_admin_international_translations_export_catalogues:
 
                         // admin_international_translations_show_settings
                         if ('/improve/international/translations/settings' === $pathinfo) {
@@ -4616,7 +5335,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                         // admin_taxes_search
                         if ('/improve/international/taxes/' === $pathinfo) {
-                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\TaxController::searchAction',  '_legacy_controller' => 'AdminTaxes',  '_legacy_link' => 'AdminTaxes:submitFiltertax',  '_route' => 'admin_taxes_search',);
+                            $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.tax',  'redirectRoute' => 'admin_taxes_index',  '_legacy_controller' => 'AdminTaxes',  '_legacy_link' => 'AdminTaxes:submitFiltertax',  '_route' => 'admin_taxes_search',);
                             if (!in_array($requestMethod, ['POST'])) {
                                 $allow = array_merge($allow, ['POST']);
                                 goto not_admin_taxes_search;
@@ -4860,17 +5579,41 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_localization_index:
 
-                    // admin_localization_save_options
-                    if ('/improve/international/localization/options' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\LocalizationController::saveOptionsAction',  '_legacy_controller' => 'AdminLocalization',  '_legacy_link' => 'AdminLocalization:update',  '_route' => 'admin_localization_save_options',);
+                    // admin_localization_configuration_save
+                    if ('/improve/international/localization/configuration' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\LocalizationController::processConfigurationFormAction',  '_legacy_controller' => 'AdminLocalization',  '_legacy_link' => 'AdminLocalization:update',  '_route' => 'admin_localization_configuration_save',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
-                            goto not_admin_localization_save_options;
+                            goto not_admin_localization_configuration_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_localization_save_options:
+                    not_admin_localization_configuration_save:
+
+                    // admin_localization_local_units_save
+                    if ('/improve/international/localization/local-units' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\LocalizationController::processLocalUnitsFormAction',  '_legacy_controller' => 'AdminLocalization',  '_route' => 'admin_localization_local_units_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_localization_local_units_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_localization_local_units_save:
+
+                    // admin_localization_advanced_save
+                    if ('/improve/international/localization/advanced' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\LocalizationController::processAdvancedFormAction',  '_legacy_controller' => 'AdminLocalization',  '_route' => 'admin_localization_advanced_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_localization_advanced_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_localization_advanced_save:
 
                     // admin_localization_import_pack
                     if ('/improve/international/localization/import-pack' === $pathinfo) {
@@ -4909,7 +5652,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                     // admin_languages_search
                     if ('/improve/international/languages/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\LanguageController::searchGridAction',  '_legacy_controller' => 'AdminLanguages',  '_legacy_link' =>   array (    0 => 'AdminLanguages:submitFilterlang',    1 => 'AdminLanguages:submitFiltercurrency',  ),  '_route' => 'admin_languages_search',);
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.language',  'redirectRoute' => 'admin_languages_index',  '_legacy_controller' => 'AdminLanguages',  '_legacy_link' =>   array (    0 => 'AdminLanguages:submitFilterlang',    1 => 'AdminLanguages:submitFiltercurrency',  ),  '_route' => 'admin_languages_search',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
                             goto not_admin_languages_search;
@@ -4946,8 +5689,8 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     // admin_languages_delete
                     if (preg_match('#^/improve/international/languages/(?P<languageId>\\d+)/delete$#sD', $pathinfo, $matches)) {
                         $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_languages_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\LanguageController::deleteAction',  '_legacy_controller' => 'AdminLanguages',  '_legacy_link' => 'AdminLanguages:deletelang',));
-                        if (!in_array($requestMethod, ['POST'])) {
-                            $allow = array_merge($allow, ['POST']);
+                        if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                            $allow = array_merge($allow, ['POST', 'DELETE']);
                             goto not_admin_languages_delete;
                         }
 
@@ -5014,17 +5757,41 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_geolocation_index:
 
-                    // admin_geolocation_save_options
-                    if ('/improve/international/geolocation/process_form' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\GeolocationController::saveOptionsAction',  '_legacy_controller' => 'AdminGeolocation',  '_legacy_link' => 'AdminGeolocation:update',  '_route' => 'admin_geolocation_save_options',);
+                    // admin_geolocation_by_ip_address_save
+                    if ('/improve/international/geolocation/by-ip-address' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\GeolocationController::processByIpAddressFormAction',  '_legacy_controller' => 'AdminGeolocation',  '_legacy_link' => 'AdminGeolocation:update',  '_route' => 'admin_geolocation_by_ip_address_save',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
-                            goto not_admin_geolocation_save_options;
+                            goto not_admin_geolocation_by_ip_address_save;
                         }
 
                         return $ret;
                     }
-                    not_admin_geolocation_save_options:
+                    not_admin_geolocation_by_ip_address_save:
+
+                    // admin_geolocation_whitelist_save
+                    if ('/improve/international/geolocation/whitelist' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\GeolocationController::processWhitelistFormAction',  '_legacy_controller' => 'AdminGeolocation',  '_legacy_link' => 'AdminGeolocation:update',  '_route' => 'admin_geolocation_whitelist_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_geolocation_whitelist_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_geolocation_whitelist_save:
+
+                    // admin_geolocation_options_save
+                    if ('/improve/international/geolocation/options' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\GeolocationController::processOptionsFormAction',  '_legacy_controller' => 'AdminGeolocation',  '_legacy_link' => 'AdminGeolocation:update',  '_route' => 'admin_geolocation_options_save',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_geolocation_options_save;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_geolocation_options_save:
 
                 }
 
@@ -5051,7 +5818,7 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
                     // admin_currencies_search
                     if ('/improve/international/currencies/' === $pathinfo) {
-                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\CurrencyController::searchAction',  '_legacy_controller' => 'AdminCurrencies',  '_legacy_link' => 'AdminCurrencies:submitFiltercurrency',  '_route' => 'admin_currencies_search',);
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\CommonController::searchGridAction',  'gridDefinitionFactoryServiceId' => 'prestashop.core.grid.definition.factory.currency',  'redirectRoute' => 'admin_currencies_index',  '_legacy_controller' => 'AdminCurrencies',  '_legacy_link' => 'AdminCurrencies:submitFiltercurrency',  '_route' => 'admin_currencies_search',);
                         if (!in_array($requestMethod, ['POST'])) {
                             $allow = array_merge($allow, ['POST']);
                             goto not_admin_currencies_search;
@@ -5145,6 +5912,30 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     }
                     not_admin_currencies_get_reference_data:
 
+                    // admin_currencies_bulk_delete
+                    if ('/improve/international/currencies/bulk-delete' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\CurrencyController::bulkDeleteAction',  '_legacy_controller' => 'AdminCurrencies',  '_legacy_link' => 'AdminCurrencies:submitBulkdeletecurrency',  '_route' => 'admin_currencies_bulk_delete',);
+                        if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                            $allow = array_merge($allow, ['POST', 'DELETE']);
+                            goto not_admin_currencies_bulk_delete;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_currencies_bulk_delete:
+
+                    // admin_currencies_bulk_toggle_status
+                    if (0 === strpos($pathinfo, '/improve/international/currencies/bulk-toggle-status') && preg_match('#^/improve/international/currencies/bulk\\-toggle\\-status/(?P<status>enable|disable)$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_currencies_bulk_toggle_status']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\CurrencyController::bulkToggleStatusAction',  '_legacy_controller' => 'AdminCurrencies',  '_legacy_link' => 'AdminCurrencies:submitBulkupdatecurrency',));
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_currencies_bulk_toggle_status;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_currencies_bulk_toggle_status:
+
                 }
 
                 // admin_country_states
@@ -5166,6 +5957,113 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                     return $ret;
                 }
                 not_admin_country_states:
+
+                if (0 === strpos($pathinfo, '/improve/international/zones')) {
+                    // admin_zones_index
+                    if ('/improve/international/zones' === $trimmedPathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::indexAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones',  '_route' => 'admin_zones_index',);
+                        if ('/' === substr($pathinfo, -1)) {
+                            // no-op
+                        } elseif ('GET' !== $canonicalMethod) {
+                            goto not_admin_zones_index;
+                        } else {
+                            return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_zones_index'));
+                        }
+
+                        if (!in_array($canonicalMethod, ['GET'])) {
+                            $allow = array_merge($allow, ['GET']);
+                            goto not_admin_zones_index;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_index:
+
+                    // admin_zones_search
+                    if ('/improve/international/zones/' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::searchAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:submitFilterzone',  '_route' => 'admin_zones_search',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_zones_search;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_search:
+
+                    // admin_zones_create
+                    if ('/improve/international/zones/new' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::createAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:addzone',  '_route' => 'admin_zones_create',);
+                        if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                            $allow = array_merge($allow, ['GET', 'POST']);
+                            goto not_admin_zones_create;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_create:
+
+                    // admin_zones_edit
+                    if (preg_match('#^/improve/international/zones/(?P<zoneId>\\d+)/edit$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_zones_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::editAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:updatezone',  '_legacy_parameters' =>   array (    'id_zone' => 'zoneId',  ),));
+                        if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                            $allow = array_merge($allow, ['GET', 'POST']);
+                            goto not_admin_zones_edit;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_edit:
+
+                    // admin_zones_delete
+                    if (preg_match('#^/improve/international/zones/(?P<zoneId>\\d+)/delete$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_zones_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::deleteAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:deletezone',  '_legacy_parameters' =>   array (    'id_zone' => 'zoneId',  ),));
+                        if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                            $allow = array_merge($allow, ['POST', 'DELETE']);
+                            goto not_admin_zones_delete;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_delete:
+
+                    // admin_zones_toggle_status
+                    if (preg_match('#^/improve/international/zones/(?P<zoneId>\\d+)/toggle\\-status$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_zones_toggle_status']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::toggleStatusAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:enableSelection',  '_legacy_parameters' =>   array (    'id_zone' => 'zoneId',  ),));
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_zones_toggle_status;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_toggle_status:
+
+                    // admin_zones_bulk_delete
+                    if ('/improve/international/zones/bulk-delete' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::bulkDeleteAction',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:submitBulkdeletezone',  '_route' => 'admin_zones_bulk_delete',);
+                        if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                            $allow = array_merge($allow, ['POST', 'DELETE']);
+                            goto not_admin_zones_bulk_delete;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_bulk_delete:
+
+                    // admin_zones_bulk_toggle_status
+                    if (0 === strpos($pathinfo, '/improve/international/zones/bulk-toggle-status') && preg_match('#^/improve/international/zones/bulk\\-toggle\\-status/(?P<status>enable|disable)$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_zones_bulk_toggle_status']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\International\\ZoneController::bulkToggleStatus',  '_legacy_controller' => 'AdminZones',  '_legacy_link' => 'AdminZones:submitBulkupdatezone',));
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_zones_bulk_toggle_status;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_zones_bulk_toggle_status:
+
+                }
 
             }
 
@@ -5551,6 +6449,18 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                         return $ret;
                     }
                     not_admin_modules_positions_unhook:
+
+                    // admin_modules_positions_toggle_status
+                    if ('/improve/design/modules/positions/toggle-status' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Design\\PositionsController::toggleStatusAction',  '_legacy_controller' => 'AdminModulesPositions',  '_legacy_link' => 'AdminModulesPositions',  '_route' => 'admin_modules_positions_toggle_status',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_modules_positions_toggle_status;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_modules_positions_toggle_status:
 
                 }
 
@@ -6019,8 +6929,16 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
 
             elseif (0 === strpos($pathinfo, '/improve/shipping/preferences')) {
                 // admin_shipping_preferences
-                if ('/improve/shipping/preferences' === $pathinfo) {
+                if ('/improve/shipping/preferences' === $trimmedPathinfo) {
                     $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\PreferencesController::indexAction',  '_legacy_controller' => 'AdminShipping',  '_legacy_link' => 'AdminShipping',  '_route' => 'admin_shipping_preferences',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_admin_shipping_preferences;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_shipping_preferences'));
+                    }
+
                     if (!in_array($canonicalMethod, ['GET'])) {
                         $allow = array_merge($allow, ['GET']);
                         goto not_admin_shipping_preferences;
@@ -6030,17 +6948,163 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                 }
                 not_admin_shipping_preferences:
 
-                // admin_shipping_preferences_save
-                if ('/improve/shipping/preferences' === $pathinfo) {
-                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\PreferencesController::processFormAction',  '_legacy_controller' => 'AdminShipping',  '_legacy_link' => 'AdminShipping:update',  '_route' => 'admin_shipping_preferences_save',);
+                // admin_shipping_preferences_handling_save
+                if ('/improve/shipping/preferences/handling' === $pathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\PreferencesController::processHandlingFormAction',  '_legacy_controller' => 'AdminShipping',  '_legacy_link' => 'AdminShipping:update',  '_route' => 'admin_shipping_preferences_handling_save',);
                     if (!in_array($requestMethod, ['POST'])) {
                         $allow = array_merge($allow, ['POST']);
-                        goto not_admin_shipping_preferences_save;
+                        goto not_admin_shipping_preferences_handling_save;
                     }
 
                     return $ret;
                 }
-                not_admin_shipping_preferences_save:
+                not_admin_shipping_preferences_handling_save:
+
+                // admin_shipping_preferences_carrier_options_save
+                if ('/improve/shipping/preferences/carrier-options' === $pathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\PreferencesController::processCarrierOptionsFormAction',  '_legacy_controller' => 'AdminShipping',  '_route' => 'admin_shipping_preferences_carrier_options_save',);
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_shipping_preferences_carrier_options_save;
+                    }
+
+                    return $ret;
+                }
+                not_admin_shipping_preferences_carrier_options_save:
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/improve/shipping/carriers')) {
+                // admin_carriers_index
+                if ('/improve/shipping/carriers' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::indexAction',  '_legacy_controller' => 'AdminCarriers',  '_route' => 'admin_carriers_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_admin_carriers_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_carriers_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_admin_carriers_index;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_index:
+
+                // admin_carriers_search
+                if ('/improve/shipping/carriers/' === $pathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::searchAction',  '_legacy_controller' => 'AdminCarriers',  '_route' => 'admin_carriers_search',);
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_carriers_search;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_search:
+
+                // admin_carriers_edit
+                if (preg_match('#^/improve/shipping/carriers/(?P<carrierId>\\d+)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_carriers_edit']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_admin_carriers_edit;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_edit:
+
+                // admin_carriers_delete
+                if (preg_match('#^/improve/shipping/carriers/(?P<carrierId>\\d+)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_carriers_delete']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::deleteAction',  '_legacy_controller' => 'AdminCarriers',  '_legacy_parameters' =>   array (    'id_carrier' => 'carrierId',  ),));
+                    if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                        $allow = array_merge($allow, ['POST', 'DELETE']);
+                        goto not_admin_carriers_delete;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_delete:
+
+                // admin_carriers_toggle_status
+                if (preg_match('#^/improve/shipping/carriers/(?P<carrierId>\\d+)/toggle\\-status$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_carriers_toggle_status']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::toggleStatusAction',  '_legacy_controller' => 'AdminCarriers',  '_legacy_parameters' =>   array (    'id_carrier' => 'carrierId',  ),));
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_carriers_toggle_status;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_toggle_status:
+
+                // admin_carriers_toggle_is_free
+                if (preg_match('#^/improve/shipping/carriers/(?P<carrierId>\\d+)/toggle\\-is\\-free$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_carriers_toggle_is_free']), array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::toggleIsFreeAction',  '_legacy_controller' => 'AdminCarriers',  '_legacy_parameters' =>   array (    'id_carrier' => 'carrierId',  ),));
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_carriers_toggle_is_free;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_toggle_is_free:
+
+                // admin_carriers_update_position
+                if ('/improve/shipping/carriers/update-position' === $pathinfo) {
+                    $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::updatePositionAction',  '_legacy_controller' => 'AdminCarriers',  '_route' => 'admin_carriers_update_position',);
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_admin_carriers_update_position;
+                    }
+
+                    return $ret;
+                }
+                not_admin_carriers_update_position:
+
+                if (0 === strpos($pathinfo, '/improve/shipping/carriers/bulk-')) {
+                    // admin_carriers_bulk_enable_status
+                    if ('/improve/shipping/carriers/bulk-enable' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::bulkEnableStatusAction',  '_legacy_controller' => 'AdminCarriers',  '_route' => 'admin_carriers_bulk_enable_status',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_carriers_bulk_enable_status;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_carriers_bulk_enable_status:
+
+                    // admin_carriers_bulk_disable_status
+                    if ('/improve/shipping/carriers/bulk-disable' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::bulkDisableStatusAction',  '_legacy_controller' => 'AdminCarriers',  '_route' => 'admin_carriers_bulk_disable_status',);
+                        if (!in_array($requestMethod, ['POST'])) {
+                            $allow = array_merge($allow, ['POST']);
+                            goto not_admin_carriers_bulk_disable_status;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_carriers_bulk_disable_status:
+
+                    // admin_carriers_bulk_delete
+                    if ('/improve/shipping/carriers/bulk-delete' === $pathinfo) {
+                        $ret = array (  '_controller' => 'PrestaShopBundle\\Controller\\Admin\\Improve\\Shipping\\CarriersController::bulkDeleteAction',  '_legacy_controller' => 'AdminCarriers',  '_route' => 'admin_carriers_bulk_delete',);
+                        if (!in_array($requestMethod, ['POST', 'DELETE'])) {
+                            $allow = array_merge($allow, ['POST', 'DELETE']);
+                            goto not_admin_carriers_bulk_delete;
+                        }
+
+                        return $ret;
+                    }
+                    not_admin_carriers_bulk_delete:
+
+                }
 
             }
 

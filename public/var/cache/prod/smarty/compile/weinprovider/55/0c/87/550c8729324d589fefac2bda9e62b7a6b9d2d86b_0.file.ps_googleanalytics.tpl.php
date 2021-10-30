@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-29 11:09:22
+/* Smarty version 3.1.39, created on 2021-10-30 03:04:01
   from '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/modules/ps_googleanalytics/views/templates/hook/ps_googleanalytics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617bba42cc63e2_12233067',
+  'unifunc' => 'content_617c9a015164e4_35711101',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '550c8729324d589fefac2bda9e62b7a6b9d2d86b' => 
     array (
       0 => '/var/www/vhosts/dev.data-horizon.de/order-der-weinprovider.dev.data-horizon.de/public/modules/ps_googleanalytics/views/templates/hook/ps_googleanalytics.tpl',
-      1 => 1635496044,
+      1 => 1635515798,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617bba42cc63e2_12233067 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617c9a015164e4_35711101 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>

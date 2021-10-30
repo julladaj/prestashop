@@ -1,0 +1,24 @@
+*ERROR* 	v1.7.8.0	2021/10/30 - 03:05:10: Unknown column &#039;lbs.position&#039; in &#039;order clause&#039;&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;SELECT lb.`id_link_block`
+                    FROM nnpctx5el1link_block lb
+                    INNER JOIN nnpctx5el1link_block_shop lbs ON lbs.`id_link_block` = lb.`id_link_block`
+                    WHERE lb. `id_hook` = 26 AND lbs.`id_shop` = 1
+                    ORDER by lbs.`position`
+                &lt;/pre&gt; at line 769 in file classes/db/Db.php
+*ERROR* 	v1.7.8.0	2021/10/30 - 03:05:47: Unknown column &#039;lbs.position&#039; in &#039;order clause&#039;&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;SELECT lb.`id_link_block`
+                    FROM nnpctx5el1link_block lb
+                    INNER JOIN nnpctx5el1link_block_shop lbs ON lbs.`id_link_block` = lb.`id_link_block`
+                    WHERE lb. `id_hook` = 26 AND lbs.`id_shop` = 1
+                    ORDER by lbs.`position`
+                &lt;/pre&gt; at line 769 in file classes/db/Db.php
+*ERROR* 	v1.7.8.0	2021/10/30 - 03:06:32: Unknown column &#039;lbs.position&#039; in &#039;order clause&#039;&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;SELECT lb.`id_link_block`
+                    FROM nnpctx5el1link_block lb
+                    INNER JOIN nnpctx5el1link_block_shop lbs ON lbs.`id_link_block` = lb.`id_link_block`
+                    WHERE lb. `id_hook` = 26 AND lbs.`id_shop` = 1
+                    ORDER by lbs.`position`
+                &lt;/pre&gt; at line 769 in file classes/db/Db.php
+*ERROR* 	v1.7.8.0	2021/10/30 - 03:07:01: Unknown column &#039;lbs.position&#039; in &#039;order clause&#039;&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;SELECT lb.`id_link_block`
+                    FROM nnpctx5el1link_block lb
+                    INNER JOIN nnpctx5el1link_block_shop lbs ON lbs.`id_link_block` = lb.`id_link_block`
+                    WHERE lb. `id_hook` = 26 AND lbs.`id_shop` = 1
+                    ORDER by lbs.`position`
+                &lt;/pre&gt; at line 769 in file classes/db/Db.php
